@@ -1,11 +1,17 @@
+
+
+import AllRoutes from './AllRoutes/AllRoutes';
+
 import './App.css';
-import Beauty from './Beauty_Component/Beauty';
+
+
 
 function App() {
   return (
     <div className="App">
 
-
+     <h1>ModeSens</h1>
+     <AllRoutes/>
 
     </div>
   );
