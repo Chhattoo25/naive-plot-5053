@@ -1,5 +1,5 @@
-import { Box, Center, Flex, Spacer,Text  } from '@chakra-ui/react';
-import { SearchIcon } from '@chakra-ui/icons'
+import { Box, Button, Center, Flex, Heading, Image, SimpleGrid, Spacer,Text  } from '@chakra-ui/react';
+import { ChevronDownIcon, SearchIcon } from '@chakra-ui/icons'
 import React from 'react'
 import {
     Accordion,
@@ -7,6 +7,13 @@ import {
     AccordionButton,
     AccordionPanel,
     AccordionIcon,
+  } from '@chakra-ui/react';
+
+  import {
+    Menu,
+    MenuButton,
+    MenuList,
+    MenuItem
   } from '@chakra-ui/react'
 
 const Beauty = () => {
@@ -87,7 +94,7 @@ const Beauty = () => {
                             <Text>Bags</Text>
                             </AccordionPanel>
                         </AccordionItem>
-                        </Accordion>
+                    </Accordion>
                 </Box>
 
                 <Box borderColor='gray' borderWidth={2} h='3rem' cursor='pointer'>
@@ -141,6 +148,60 @@ const Beauty = () => {
             {/* all items */}
 
             <Box borderWidth={2} borderColor='gray' w='80%'>
+
+                {/* adding sorting key */}
+
+                <Box ml='88%'>
+                    <Menu >
+                        <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
+                            Best Sellers
+                        </MenuButton>
+                        <MenuList>
+                            <MenuItem>New Arrivals</MenuItem>
+                            <MenuItem>Most liked</MenuItem>
+                            <MenuItem>Highest Price</MenuItem>
+                            <MenuItem>Lowest Price</MenuItem>
+                            <MenuItem>New Sale</MenuItem>
+                        </MenuList>
+                    </Menu>
+                </Box>
+
+                <Box>
+                    <SimpleGrid columns={[1, 1, 3, 4]}>
+                        <Box borderWidth={4}>
+                            <Box><Image src='https://cdn.modesens.com/product/10299283_9?w=400' alt=''/></Box>
+                            <Heading textAlign='center'>CREED</Heading>
+                            <Text textAlign='center' pt={2}>Milseme Imperial Fragrance</Text>
+                            <Text textAlign='center' pt={2}>$320-345</Text>
+                            <Text textAlign='center' pt={2}>Compare 5 Store</Text>
+
+                        </Box>
+                        <Box borderWidth={4}>
+                            <Box><Image src='https://cdn.modesens.com/product/10299283_9?w=400' alt=''/></Box>
+                            <Heading textAlign='center'>CREED</Heading>
+                            <Text textAlign='center' pt={2}>Milseme Imperial Fragrance</Text>
+                            <Text textAlign='center' pt={2}>$320-345</Text>
+                            <Text textAlign='center' pt={2}>Compare 5 Store</Text>
+
+                        </Box>
+                        <Box borderWidth={4}>
+                            <Box><Image src='https://cdn.modesens.com/product/10299283_9?w=400' alt=''/></Box>
+                            <Heading textAlign='center'>CREED</Heading>
+                            <Text textAlign='center' pt={2}>Milseme Imperial Fragrance</Text>
+                            <Text textAlign='center' pt={2}>$320-345</Text>
+                            <Text textAlign='center' pt={2}>Compare 5 Store</Text>
+
+                        </Box>
+                        <Box borderWidth={4}>
+                            <Box><Image src='https://cdn.modesens.com/product/10299283_9?w=400' alt=''/></Box>
+                            <Heading textAlign='center'>CREED</Heading>
+                            <Text textAlign='center' pt={2}>Milseme Imperial Fragrance</Text>
+                            <Text textAlign='center' pt={2}>$320-345</Text>
+                            <Text textAlign='center' pt={2}>Compare 5 Store</Text>
+
+                        </Box>
+                    </SimpleGrid>
+                </Box>
 
             </Box>
         </Flex>
