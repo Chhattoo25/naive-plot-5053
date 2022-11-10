@@ -1,7 +1,4 @@
-
-
 import AllRoutes from './AllRoutes/AllRoutes';
-
 import './App.css';
 
 
