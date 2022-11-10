@@ -1,15 +1,119 @@
-// import React from 'react'
-// import Carousel from "react-multi-carousel";
-// import img1 from '../../../Images/modesens-Double11-Top-first-image.jpg'
-// const TopSlider = () => {
-//   return (
-// <div>
+import React from "react";
+import styled from "styled-components";
+import Slider from "react-slick";
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 
+function NextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <BsArrowRight
+      className={className}
+      style={{
+        ...style,
+        display: "block",
+        color: "black",
+        height: "2.5rem",
+        width: "2.5rem",
+      }}
+      onClick={onClick}
+    />
+  );
+}
 
-// </div>
-//   )
-  
-// }
+function PrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <BsArrowLeft
+      className={className}
+      style={{
+        ...style,
+        display: "block",
+        color: "black",
+        height: "2.5rem",
+        width: "2.5rem",
+      }}
+      onClick={onClick}
+    />
+  );
+}
+const TopSlider = () => {
+  const settings = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    responsive: [
+                     {
+                       breakpoint: 1024,
+                       settings: {
+                         slidesToShow: 3,
+                         slidesToScroll: 3,
+                         infinite: true,
+                         dots: true
+                       }
+                     },
+                     {
+                       breakpoint: 600,
+                       settings: {
+                         slidesToShow: 2,
+                         slidesToScroll: 2,
+                         initialSlide: 2
+                       }
+                     },
+                     {
+                       breakpoint: 480,
+                       settings: {
+                         slidesToShow: 1,
+                         slidesToScroll: 1
+                       }
+                     }
+                   ],
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+  };
+  return (
+    <div style={{ width: "95%", margin: "auto", marginTop: "20px" }}>
+      <Slider {...settings}>
+        <BOX>
+          <img
+            src="https://modesens.com/banner/12477/getimg/?img=%2Fbanner%2F20220615-modesens-SSENSE-1140x400-EN.jpg"
+            alt=""
+            height="100%"
+            width="100%"
+            // style={{ margin: "auto", marginTop: "15px" }}
+          />
+        </BOX>
+        <BOX>
+          <img
+            src="https://modesens.com/banner/11846/getimg/?img=%2Fbanner%2F20220516-modesens-SS22-SALE-1140x400-EN.jpg"
+            alt=""
+            height="100%"
+            width="100%"
+            // style={{ margin: "auto", marginTop: "15px" }}
+          />
+        </BOX>
+        <BOX>
+          <img
+            src="https://modesens.com/banner/12406/getimg/?img=%2Fbanner%2F20220608-modesens-Home-1140x400-H.jpg"
+            alt=""
+            height="100%"
+            width="100%"
+            // style={{ margin: "auto", marginTop: "15px" }}
+          />
+        </BOX>
+      </Slider>
+    </div>
+  );
+};
 
-// export default TopSlider
+export default TopSlider;
+
+const BOX = styled.div`
+  width: 71.375rem !important;
+  height: 25rem;
+  border-radius: 5px;
+  flex-direction: row;
+`;
