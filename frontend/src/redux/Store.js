@@ -8,7 +8,7 @@ import thunk from 'redux-thunk'
 
 
 const rootReducer = Reducer;
-const rootReducer = AppReducer;
+// const rootReducer = AppReducer; (shankar)
 
 const store = legacy_createStore(rootReducer, applyMiddleware(thunk))
 
