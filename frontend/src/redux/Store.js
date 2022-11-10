@@ -1,5 +1,10 @@
+import Reducer from "./AppReducer/Reducer";
+import {legacy_createStore , applyMiddleware}from "redux";
+import thunk from 'redux-thunk';
 
-import Reducer from "./AppReducer/Reducer"
+
+
+const store = legacy_createStore(Reducer, applyMiddleware(thunk))
 
 import { Reducer as AppReducer } from "./AppReducer/Reducer"
 
@@ -11,5 +16,6 @@ const rootReducer = Reducer;
 // const rootReducer = AppReducer; (shankar)
 
 const store = legacy_createStore(rootReducer, applyMiddleware(thunk))
+
 
 export default store;

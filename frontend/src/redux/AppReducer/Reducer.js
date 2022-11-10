@@ -1,4 +1,4 @@
-import * as ways from "./ActionType";
+import * as types from "./ActionType";
 
 const initialState = {
     data: [],
@@ -6,13 +6,14 @@ const initialState = {
     isError: false
 }
 
-function Reducer(state = initialState, {type,payload}){
+function Reducer(state = initialState, action){
+    const {type,payload} = action;
     switch(type){
-        case ways.GET_DATA_REQUEST:
+        case types.GET_DATA_REQUEST:
             return {...state, isLoading: true}
-        case ways.GET_DATA_SUCCESS:
+        case types.GET_DATA_SUCCESS:
             return{...state, isLoading: false, data: payload, isError: false}
-        case ways.GET_DATA_FAILURE:
+        case types.GET_DATA_FAILURE:
             return{...state, isLoading: false, data:[], isError: false}
         default: 
             return state;
