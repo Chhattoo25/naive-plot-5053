@@ -5,6 +5,12 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
+import a1 from '../../Images/a1.jpg'
+import a2 from '../../Images/a2.jpg'
+import a3 from '../../Images/a3.jpg'
+import a4 from '../../Images/a4.jpg'
+import a5 from '../../Images/a5.jpg'
+import a6 from '../../Images/a6.jpg'
 
 function NextArrow(props) {
   const { className, style, onClick } = props;
@@ -16,7 +22,7 @@ function NextArrow(props) {
         display: "block",
         color: "black",
         height: "2.5rem",
-        width: "2.5rem",
+        width: "2.0rem",
       }}
       onClick={onClick}
     />
@@ -34,6 +40,7 @@ function PrevArrow(props) {
         color: "black",
         height: "2.5rem",
         width: "2.5rem",
+        marginRight:"2rem"
       }}
       onClick={onClick}
     />
@@ -49,8 +56,8 @@ const TopSlider = () => {
                      {
                        breakpoint: 1024,
                        settings: {
-                         slidesToShow: 3,
-                         slidesToScroll: 3,
+                         slidesToShow: 1,
+                         slidesToScroll: 1,
                          infinite: true,
                          dots: true
                        }
@@ -79,7 +86,16 @@ const TopSlider = () => {
       <Slider {...settings}>
         <BOX>
           <img
-            src="https://modesens.com/banner/12477/getimg/?img=%2Fbanner%2F20220615-modesens-SSENSE-1140x400-EN.jpg"
+            src={a1}
+            alt=""
+            height="100%"
+           
+//             style={{width:"80%" , margin:'auto' }}
+          />
+        </BOX>
+        <BOX>
+          <img
+            src={a2}
             alt=""
             height="100%"
             width="100%"
@@ -88,16 +104,34 @@ const TopSlider = () => {
         </BOX>
         <BOX>
           <img
-            src="https://modesens.com/banner/11846/getimg/?img=%2Fbanner%2F20220516-modesens-SS22-SALE-1140x400-EN.jpg"
+            src={a3}
             alt=""
             height="100%"
             width="100%"
             // style={{ margin: "auto", marginTop: "15px" }}
           />
-        </BOX>
+        </BOX> 
+          <BOX>
+          <img
+            src={a4}
+            alt=""
+            height="100%"
+            width="100%"
+            // style={{ margin: "auto", marginTop: "15px" }}
+          />
+        </BOX>  
         <BOX>
           <img
-            src="https://modesens.com/banner/12406/getimg/?img=%2Fbanner%2F20220608-modesens-Home-1140x400-H.jpg"
+            src={a5}
+            alt=""
+            height="100%"
+            width="100%"
+            // style={{ margin: "auto", marginTop: "15px" }}
+          />
+        </BOX> 
+         <BOX>
+          <img
+            src={a6}
             alt=""
             height="100%"
             width="100%"
@@ -112,8 +146,15 @@ const TopSlider = () => {
 export default TopSlider;
 
 const BOX = styled.div`
-  width: 71.375rem !important;
+  width: 61.375rem   ;
   height: 25rem;
+  margin: auto;
   border-radius: 5px;
   flex-direction: row;
 `;
+
+
+const Heading = styled.h1`
+color:green;
+font-size: 200px;
+`
