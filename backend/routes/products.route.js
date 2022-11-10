@@ -3,16 +3,33 @@ const productsRouter=express.Router()
 const fs=require("fs")
 const dotenv=require("dotenv");
 const { ProductModel } = require("../models/Product.model");
+const { authentication } = require("../middlewares/authentication");
+const { autherisation } = require("../middlewares/autherisation");
 
 productsRouter.get("/",(req,res)=>{
     res.send("welcome to products")
 })
 
 
-productsRouter.post("/upload",(req,res)=>{
-    const {title,type,category,colour,price,brand,discription}=req.body
-    const file1=req.files.photo
-    res.send({"msg":"ki"})
+productsRouter.post("/addproducts",authentication,autherisation,async(req,res)=>{
+    const {title,type,name,sub_type,category,colour,price,brand,discription,image1,image2,image3,user_id}=req.body
+    const new_product = new ProductModel({
+        title,
+        type,
+        name,
+        sub_type,
+        category,
+        colour,
+        price,
+        brand,
+        discription,
+        image1,
+        image2,
+        image3,
+        user_id:user_id
+     })
+     await new_product.save()
+     res.send({new_product})
 })
 
 

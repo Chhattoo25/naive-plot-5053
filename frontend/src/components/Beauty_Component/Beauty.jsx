@@ -15,8 +15,25 @@ import {
     MenuList,
     MenuItem
   } from '@chakra-ui/react'
+import {useDispatch, useSelector} from "react-redux";
+import { useEffect } from 'react';
+import { getData } from '../../redux/AppReducer/Action';
+import ProductList from './ProductList';
 
 const Beauty = () => {
+
+    const data = useSelector((state) => state.data);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        if(data.length === 0){
+            dispatch(getData())
+        }
+    },[])
+    console.log(data)
+
+
+    
   return (
     <Box borderWidth={4} w='100%' borderColor='black' >
         <Box borderWidth={2} borderColor='red' height='100px' w='80%' ml='20%' >
@@ -168,38 +185,11 @@ const Beauty = () => {
 
                 <Box>
                     <SimpleGrid columns={[1, 1, 3, 4]}>
-                        <Box borderWidth={4}>
-                            <Box><Image src='https://cdn.modesens.com/product/10299283_9?w=400' alt=''/></Box>
-                            <Heading textAlign='center'>CREED</Heading>
-                            <Text textAlign='center' pt={2}>Milseme Imperial Fragrance</Text>
-                            <Text textAlign='center' pt={2}>$320-345</Text>
-                            <Text textAlign='center' pt={2}>Compare 5 Store</Text>
-
-                        </Box>
-                        <Box borderWidth={4}>
-                            <Box><Image src='https://cdn.modesens.com/product/10299283_9?w=400' alt=''/></Box>
-                            <Heading textAlign='center'>CREED</Heading>
-                            <Text textAlign='center' pt={2}>Milseme Imperial Fragrance</Text>
-                            <Text textAlign='center' pt={2}>$320-345</Text>
-                            <Text textAlign='center' pt={2}>Compare 5 Store</Text>
-
-                        </Box>
-                        <Box borderWidth={4}>
-                            <Box><Image src='https://cdn.modesens.com/product/10299283_9?w=400' alt=''/></Box>
-                            <Heading textAlign='center'>CREED</Heading>
-                            <Text textAlign='center' pt={2}>Milseme Imperial Fragrance</Text>
-                            <Text textAlign='center' pt={2}>$320-345</Text>
-                            <Text textAlign='center' pt={2}>Compare 5 Store</Text>
-
-                        </Box>
-                        <Box borderWidth={4}>
-                            <Box><Image src='https://cdn.modesens.com/product/10299283_9?w=400' alt=''/></Box>
-                            <Heading textAlign='center'>CREED</Heading>
-                            <Text textAlign='center' pt={2}>Milseme Imperial Fragrance</Text>
-                            <Text textAlign='center' pt={2}>$320-345</Text>
-                            <Text textAlign='center' pt={2}>Compare 5 Store</Text>
-
-                        </Box>
+                        
+                            {data.length > 0 && data.map((item) => {
+                                return <ProductList key={item.id} productData={item}/>
+                            })}
+                        
                     </SimpleGrid>
                 </Box>
 
