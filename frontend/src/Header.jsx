@@ -1,148 +1,198 @@
 import React from 'react'
 
+
 const Header = () => {
   return (
     <div>
-      <Menu>
-  <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
-    Your Cats
-  </MenuButton>
-  <MenuList>
-    <MenuItem minH='48px'>
-      <Image
-        boxSize='2rem'
-        borderRadius='full'
-        src='https://placekitten.com/100/100'
-        alt='Fluffybuns the destroyer'
-        mr='12px'
-      />
-      <span>Fluffybuns the Destroyer</span>
-    </MenuItem>
-    <MenuItem minH='40px'>
-      <Image
-        boxSize='2rem'
-        borderRadius='full'
-        src='https://placekitten.com/120/120'
-        alt='Simon the pensive'
-        mr='12px'
-      />
-      <span>Simon the pensive</span>
-    </MenuItem>
-  </MenuList>
-</Menu>
+      <div className='navbar'>
+      
+      <div className='before-menu'>
+        <h1>MODESENS</h1>
+      </div>
 
-<Menu>
-  <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
-    Your Cats
-  </MenuButton>
-  <MenuList>
-    <MenuItem minH='48px'>
-      <Image
-        boxSize='2rem'
-        borderRadius='full'
-        src='https://placekitten.com/100/100'
-        alt='Fluffybuns the destroyer'
-        mr='12px'
-      />
-      <span>Fluffybuns the Destroyer</span>
-    </MenuItem>
-    <MenuItem minH='40px'>
-      <Image
-        boxSize='2rem'
-        borderRadius='full'
-        src='https://placekitten.com/120/120'
-        alt='Simon the pensive'
-        mr='12px'
-      />
-      <span>Simon the pensive</span>
-    </MenuItem>
-  </MenuList>
-</Menu>
+      <div className='menu-bar'>
+        <div className='women'>WOMEN
+  
+         <div className='sub-menu-1'>
+       
+           <div>SHOPALL</div>
+           <div>CLOTHING</div>
+           <div>BAGS</div>
+           <div>SHOES</div>
+           <div>ACCESSORIES</div>
+           <div>BEAUTY</div>
+           <div>SALES</div>
+           <div>PREOWNED</div> 
 
-<Menu>
-  <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
-    Your Cats
-  </MenuButton>
-  <MenuList>
-    <MenuItem minH='48px'>
-      <Image
-        boxSize='2rem'
-        borderRadius='full'
-        src='https://placekitten.com/100/100'
-        alt='Fluffybuns the destroyer'
-        mr='12px'
-      />
-      <span>Fluffybuns the Destroyer</span>
-    </MenuItem>
-    <MenuItem minH='40px'>
-      <Image
-        boxSize='2rem'
-        borderRadius='full'
-        src='https://placekitten.com/120/120'
-        alt='Simon the pensive'
-        mr='12px'
-      />
-      <span>Simon the pensive</span>
-    </MenuItem>
-  </MenuList>
-</Menu>
+         </div>
+        </div>
+ <div className='men'>MEN
+    <div className='sub-menu-1'>
+       
+       <div>SHOPALL</div>
+       <div>CLOTHING</div>
+       <div>BAGS</div>
+       <div>SHOES</div>
+       <div>ACCESSORIES</div>
+       <div>BEAUTY</div>
+       <div>SALES</div>
+       <div>PREOWNED</div> 
 
-<Menu>
-  <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
-    Your Cats
-  </MenuButton>
-  <MenuList>
-    <MenuItem minH='48px'>
-      <Image
-        boxSize='2rem'
-        borderRadius='full'
-        src='https://placekitten.com/100/100'
-        alt='Fluffybuns the destroyer'
-        mr='12px'
-      />
-      <span>Fluffybuns the Destroyer</span>
-    </MenuItem>
-    <MenuItem minH='40px'>
-      <Image
-        boxSize='2rem'
-        borderRadius='full'
-        src='https://placekitten.com/120/120'
-        alt='Simon the pensive'
-        mr='12px'
-      />
-      <span>Simon the pensive</span>
-    </MenuItem>
-  </MenuList>
-</Menu>
-
-<Menu>
-  <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
-    Your Cats
-  </MenuButton>
-  <MenuList>
-    <MenuItem minH='48px'>
-      <Image
-        boxSize='2rem'
-        borderRadius='full'
-        src='https://placekitten.com/100/100'
-        alt='Fluffybuns the destroyer'
-        mr='12px'
-      />
-      <span>Fluffybuns the Destroyer</span>
-    </MenuItem>
-    <MenuItem minH='40px'>
-      <Image
-        boxSize='2rem'
-        borderRadius='full'
-        src='https://placekitten.com/120/120'
-        alt='Simon the pensive'
-        mr='12px'
-      />
-      <span>Simon the pensive</span>
-    </MenuItem>
-  </MenuList>
-</Menu>
     </div>
+ </div>
+   <div className='beauty'>BEAUTY
+    <div className='sub-menu-1'>
+       
+       <div>SHOPALL</div>
+       <div>CLOTHING</div>
+       <div>BAGS</div>
+       <div>SHOES</div>
+       <div>ACCESSORIES</div>
+       <div>BEAUTY</div>
+       <div>SALES</div>
+       <div>PREOWNED</div> 
+
+    </div>     
+  </div>
+    <div className='kids'>KIDS
+     <div className='sub-menu-1'>
+       
+       <div>SHOPALL</div>
+       <div>CLOTHING
+    
+
+       </div>
+       <div>BAGS </div>
+       <div>SHOES</div>
+       <div>ACCESSORIES</div>
+       <div>BEAUTY</div>
+       <div>SALES</div>
+       <div>PREOWNED</div> 
+
+    </div>       
+  </div>
+        <div className='kids'>HOME
+           <div className='sub-menu-5'>
+           <div className='sub-menu-5-sub'>
+              <div>
+                <heading className="menu_heading">SHOP BY CATEGORIES</heading>
+                <div>NEW ARRIVAL</div>
+                <div>SHOP ALL</div>
+                <div>BATH</div>
+                <div>BED</div>
+                <div>FURNITURE</div>
+                <div>HOME DECOR</div>
+                <div>KITCHENS & DINING</div>
+                <div>PET ACCESSORIES</div>
+              </div>
+              <div>.
+              <br />
+                <div>TECHNOLOGY</div>
+                <div>SALE</div>
+              </div>
+              <div>
+                 <heading className="menu_heading">Designers</heading>
+                 <div>GUCCI</div>
+                 <div>VERSACE</div>
+                 <div>MASION MARGIELA</div>
+                 <div>MASTER & AMP,DYNAMIC</div>
+                 <div>HAY</div>
+                 <div>VITRA</div>
+                 <div>FORNASETTI</div>
+              </div>
+              <div>
+                Here we ahave to add images
+              </div>
+             
+           </div>
+           </div>
+        </div>
+        <div className='designers'>DESIGNERS
+        <div className='sub-menu-5'>
+           <div className='sub-menu-5-sub'>
+              <div>
+                <heading className="menu_heading">SHOP BY CATEGORIES</heading>
+                <div>NEW ARRIVAL</div>
+                <div>SHOP ALL</div>
+                <div>BATH</div>
+                <div>BED</div>
+                <div>FURNITURE</div>
+                <div>HOME DECOR</div>
+                <div>KITCHENS & DINING</div>
+                <div>PET ACCESSORIES</div>
+              </div>
+              <div>.
+              <br />
+                <div>TECHNOLOGY</div>
+                <div>SALE</div>
+              </div>
+              <div>
+                 <heading className="menu_heading">Designers</heading>
+                 <div>GUCCI</div>
+                 <div>VERSACE</div>
+                 <div>MASION MARGIELA</div>
+                 <div>MASTER & AMP,DYNAMIC</div>
+                 <div>HAY</div>
+                 <div>VITRA</div>
+                 <div>FORNASETTI</div>
+              </div>
+              <div>
+                Here we ahave to add images
+              </div>
+             
+           </div>
+           </div>
+        </div>
+        <div className='community'>COMMUNITY
+    <div className='sub-menu-1'>
+       
+       <div>SHOPALL</div>
+       <div>CLOTHING</div>
+       <div>BAGS</div>
+       <div>SHOES</div>
+       <div>ACCESSORIES</div>
+       <div>BEAUTY</div>
+       <div>SALES</div>
+       <div>PREOWNED</div> 
+
+    </div> 
+        </div>
+      <div className='sales'>SALES
+        <div className='sub-menu-1'> 
+       <div>SHOPALL</div>
+       <div>CLOTHING</div>
+       <div>BAGS</div>
+       <div>SHOES</div>
+       <div>ACCESSORIES</div>
+       <div>BEAUTY</div>
+       <div>SALES</div>
+       <div>PREOWNED</div> 
+
+    </div> </div>
+        <div className='why-modesens'>WHY MODESENS
+    <div className='sub-menu-1'>
+       
+       <div>SHOPALL</div>
+       <div>CLOTHING</div>
+       <div>BAGS</div>
+       <div>SHOES</div>
+       <div>ACCESSORIES</div>
+       <div>BEAUTY</div>
+       <div>SALES</div>
+       <div>PREOWNED</div> 
+
+    </div> 
+        </div>
+      </div>
+      <div className='after-menu'>3</div>
+
+   </div>
+   <hr />
+   <br />
+   <br />
+ 
+    </div>
+    
   )
 }
 

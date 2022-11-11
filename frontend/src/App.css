@@ -28,6 +28,265 @@
   color: #61dafb;
 }
 
+.navbar{
+  width:95%;
+  margin: auto;
+  display: flex;
+  height: 50px;
+ 
+}
+.before-menu{
+  width: 15%;
+  margin-top: -17px;
+  /* background-color: aliceblue; */
+}
+.after-menu{
+  width: 25%;
+  background-color: aliceblue;
+  padding:1rem 0
+}
+.menu-bar{
+  width: 60%;
+  background-color: #61dafb;
+  padding:1rem 1rem;
+ display: flex;
+ gap: 15px;
+ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ font-size: 12px;
+ line-height: 18px;
+ font-weight: 400;
+ color: #1c1c65;
+ background-color: #fff;
+}
+.menu-bar div{
+height: 30px;
+}
+.women{
+  position: relative;
+}
+
+.sub-menu-1,.sub-menu-2,.sub-menu-3,.sub-menu-4 {
+  display: none;
+  position: absolute;
+  margin-top: 0.5rem;
+  left: 18%;
+  height: 45px;
+  padding: 35px 0;
+  gap: 25px;
+
+}
+.sub-menu-5{
+  position: absolute;
+  margin-top: 0.5rem;
+  min-height: 350px; 
+  width: 100%;
+  top: 60px;
+  left:0;
+  border-bottom: 1px gray solid;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  display: none;
+}
+.sub-sub-menu{
+  position: absolute;
+  margin-top: 1rem;
+  background-color: #61dafb;
+  min-height: 300px;
+  width: 150%;
+  margin: auto;
+  left:-25%
+}
+
+  .sub-menu-5-sub{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: auto;
+  gap: 10px;
+}
+.sub-menu-5-sub div{
+  padding: 5px;
+}
+.hr{display: none;}
+
+.menu_heading{
+  color:rgb(154, 153, 153);
+  padding: 3rem;
+}
+
+.menu-bar>div:hover{
+  border-bottom: 1px red solid;
+}
+
+.sub-menu-1>div:hover,.sub-menu-2>div:hover,.sub-menu-3>div:hover,.sub-menu-4>div:hover{
+  border-bottom: 1px red solid;
+}
+
+
+.menu-bar div:hover .sub-menu-1 {
+  display: flex; 
+}
+
+
+.menu-bar div:hover .sub-menu-5 {
+  display: block; 
+}
+
+/* footer design */
+.footer_{
+display: grid;
+grid-template-columns: repeat(5,1fr);
+grid-template-rows: auto;
+gap: 10px;
+width:95%;
+margin: auto;
+padding: 50px 0;
+border-bottom: 1px gray solid;
+border-top: 1px gray solid;
+}
+
+
+
+.footer_customer>p{
+  font-size: 14px;
+  line-height: 24px;
+  color: #7f7f7f;
+  font-weight:400;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer_customer>heading{
+  font-size: 15px;
+  line-height: 18px;
+  color: #1c1c1c;
+  font-weight:400;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.footer_customer>input{
+  width:300px;
+  margin: auto;
+  height: 30px;
+ border:none;
+ border-bottom: 1px gray solid;
+}
+.footer_customer>button{
+  width:305px;
+  margin-top: 20px;
+  height: 35px;
+  border:1px gray solid;
+  background-color: #fff;
+  font-size: 16px;
+  font-weight: 100;
+}
+.footer_customer>button:hover{
+  background-color: black;
+  color:#fff
+}
+.footer_top_images{
+  position: absolute;
+  right: 3%;
+  top: 40%;
+}
+
+/* website body part */
+.in_body_div1{
+  width: 70%;
+  margin: auto;
+  /* background-color:violet;/ */
+  margin-top: 20px;
+  padding: 5px;
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.in_body_div1>heading{
+  font-size: 24px;
+  color: #1c1c1c;
+  font-weight: 400;
+  line-height: 40px;
+}
+.in_body_div1>p{
+  font-size: 20px;
+  color: #6c757d;
+  font-weight: 300;
+  line-height: 30px;
+}
+
+
+
+/* Body part starts */
+.container {
+  padding: 40px;
+  background: #419be0;
+}
+
+.slick-slide img {
+  margin: auto;
+}
+
+/* slider part */
+.Slider {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 10px;
+
+}
+/* body{
+  background-color: #c7c3c3;
+} */
+.slick-slide > div {
+  margin: 0 10px;
+}
+.slick-list {
+  margin: 0 -10px;
+}
+
+.slick-prev:before {
+  content: "<";
+  color: red;
+  font-size: 30px;
+  }
+
+.slick-next:before {
+  content: ">"
+}
+
+.card {
+  border: 1px solid #fff;
+  background: black;
+  border-radius: 3px;
+  overflow: hidden;
+  height: 400px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.card-top h1 {
+  font-size: 0.9rem;
+  margin: 20px;
+}
+
+.card-top > img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  background: black;
+}
+
+.card-bottom {
+  margin: 10px 20px;
+}
+
+.category {
+  position: relative;
+}
+.category::before {
+  content: '';
+  background: rgb(255, 61, 61);
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  right: 0;
+  height: 2px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
