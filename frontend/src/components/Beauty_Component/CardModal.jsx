@@ -24,6 +24,9 @@ import {
   import { RiDislikeLine } from "react-icons/ri";
   import { BsFillBagPlusFill } from "react-icons/bs";
   import axios from "axios";
+  import  "./Beauty.css";
+
+
   const CardModal = ({ props }) => {
     const [qty, setQty] = useState(props?.qty ? props.qty : 1);
     const toast = useToast();
@@ -51,13 +54,14 @@ import {
       }
       onClose();
     };
+    
     return (
       <>
         <button
           onClick={() => {
             return onOpen();
           }}
-          className={ "productViewButton"}
+          className='productViewButton'
         >
           Quick View
         </button>

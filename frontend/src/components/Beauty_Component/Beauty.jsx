@@ -35,8 +35,8 @@ const Beauty = () => {
 
     
   return (
-    <Box borderWidth={4} w='100%' borderColor='black' >
-        <Box borderWidth={2} borderColor='red' height='100px' w='80%' ml='20%' >
+    <Box borderWidth={4} w='100%'  >
+        <Box borderWidth={2}  height='100px' w='80%' ml='20%' >
             <Box fontWeight={500} lineHeight='40px' fontSize='1.71rem' color='#1c1c1c' fontFamily='SuisseIntl' pt={2}>
                 Designer Beauty
             </Box>
@@ -46,7 +46,7 @@ const Beauty = () => {
 
         <Flex>
             {/* filter and sorting box */}
-            <Box borderWidth={2} borderColor='pink' w='20%' pl={2}>
+            <Box borderWidth={2}  w='20%' pl={2}>
                 <Box fontFamily='SuisseIntl' color='#8e8e8e' alignItems='center'>MODESENS / SHOP / BEAUTY</Box>
 
                 <Flex pt={2}>
@@ -164,7 +164,7 @@ const Beauty = () => {
 
             {/* all items */}
 
-            <Box borderWidth={2} borderColor='gray' w='80%'>
+            <Box borderWidth={2}  w='80%'>
 
                 {/* adding sorting key */}
 
