@@ -54,7 +54,7 @@
  font-size: 12px;
  line-height: 18px;
  font-weight: 400;
- color: #1c1c65;
+ color: #1c1c1c;
  background-color: #fff;
 }
 .menu-bar div{
@@ -72,6 +72,7 @@ height: 30px;
   height: 45px;
   padding: 35px 0;
   gap: 25px;
+  z-index: 1;
 
 }
 .sub-menu-5{
@@ -81,9 +82,11 @@ height: 30px;
   width: 100%;
   top: 60px;
   left:0;
+  z-index: 1;
   border-bottom: 1px gray solid;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   display: none;
+  background-color: #fff;
 }
 .sub-sub-menu{
   position: absolute;
