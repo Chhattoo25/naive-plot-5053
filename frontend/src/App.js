@@ -7,7 +7,7 @@ import Signup from './UMS/Signup';
 function App() {
   return (
     <div className="App">
-     <AllRoutes/>
+     {/* <AllRoutes/> */}
     <Signup/>
     </div>
   );
