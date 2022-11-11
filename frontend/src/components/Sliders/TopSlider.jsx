@@ -154,7 +154,7 @@ const BOX = styled.div`
 `;
 
 
-const Heading = styled.h1`
-color:green;
-font-size: 200px;
-`
+// const Heading = styled.h1`
+// color:green;
+// font-size: 200px;
+// `
