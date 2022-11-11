@@ -12,6 +12,10 @@ const Women = () => {
         the best price.
       </Para>
 <SecondSlider/>
+<SpecialOffer>
+        <hr />
+        <p>Special Offers</p>
+      </SpecialOffer>
       
     </MainDiv>
   )
@@ -36,4 +40,21 @@ const Para = styled.p`
 const MainDiv = styled.div`
 width: 80%;
 margin: auto;
+`
+
+const SpecialOffer = styled.div`
+  margin-top: 5rem;
+  position: relative;
+  p{
+    font-size: 1.8rem;
+  background-color: white;
+  position: absolute;
+  margin-top: -15px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  hr{
+    width: 92%;
+  }
+  }
+
 `
