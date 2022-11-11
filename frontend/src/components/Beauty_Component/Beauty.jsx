@@ -19,6 +19,7 @@ import {useDispatch, useSelector} from "react-redux";
 import { useEffect } from 'react';
 import { getData } from '../../redux/AppReducer/Action';
 import ProductList from './ProductList';
+import CardModal from './CardModal';
 
 const Beauty = () => {
 
@@ -35,8 +36,8 @@ const Beauty = () => {
 
     
   return (
-    <Box borderWidth={4} w='100%'  >
-        <Box borderWidth={2}  height='100px' w='80%' ml='20%' >
+    <Box  w='100%'  >
+        <Box height='100px' w='80%' ml='20%' >
             <Box fontWeight={500} lineHeight='40px' fontSize='1.71rem' color='#1c1c1c' fontFamily='SuisseIntl' pt={2}>
                 Designer Beauty
             </Box>
@@ -46,7 +47,7 @@ const Beauty = () => {
 
         <Flex>
             {/* filter and sorting box */}
-            <Box borderWidth={2}  w='20%' pl={2}>
+            <Box  w='20%' pl={2}>
                 <Box fontFamily='SuisseIntl' color='#8e8e8e' alignItems='center'>MODESENS / SHOP / BEAUTY</Box>
 
                 <Flex pt={2}>
@@ -164,7 +165,7 @@ const Beauty = () => {
 
             {/* all items */}
 
-            <Box borderWidth={2}  w='80%'>
+            <Box w='80%'>
 
                 {/* adding sorting key */}
 
@@ -185,10 +186,22 @@ const Beauty = () => {
 
                 <Box>
                     <SimpleGrid columns={[1, 1, 3, 4]}>
+
+                        {/* mapping all the data */}
                         
-                            {data.length > 0 && data.map((item) => {
-                                return <ProductList key={item.id} productData={item}/>
-                            })}
+                            {data.length > 0 && data.map((productData) => {
+                                
+                                return <Box borderWidth={1} fontFamily='SuisseIntl' className='beauty_container'>
+                                            <Box className='imageContainer'><Image className='productImage' src={productData.image_url} alt=''/>
+                                            </Box>
+                                            <Box className='overlay'></Box>
+                                            <CardModal productData={productData} />
+                                            <Heading textAlign='center' fontSize='14px' fontWeight={700} lineHeight='18px'>{productData.brand}</Heading>
+                                            <Text textAlign='center' pt={2} color='#8e8e8e' fontSize='0.85rem'>{productData.title}</Text>
+                                            <Text textAlign='center' as='del' pt={2}>${productData.offprice} - ${productData.price}</Text>
+                                
+                                        </Box>
+                                })}
                         
                     </SimpleGrid>
                 </Box>
