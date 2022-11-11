@@ -35,10 +35,10 @@ const Signup = () => {
         onClose={onClose}
       >
         <ModalOverlay />
-        <ModalContent >
+        <ModalContent sx={{width:'500px'}}>
           
           <ModalCloseButton />
-          <ModalBody w='800px' pb={6}>
+          <ModalBody  pb={6}>
           <Box  display="flex" alignItems="center" justifyContent="" gap='20px'>
       
           <Box bg= 'black'>
