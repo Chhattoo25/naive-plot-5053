@@ -1,18 +1,18 @@
 const mongoose = require("mongoose")
 
 const productSchema=new mongoose.Schema({
-    title:{type:String,required:true,default:"abc"},
-    type:{type:String,required:true},
-    name:{type:String,required:true},
-    sub_type:{type:String,required:true},
-    category:{type:String,required:true},
-    colour:{type:String,required:true},
+    title:{type:String,default:"abc"},
+    type:{type:String,default:"abc"},
+    name:{type:String,default:"abc"},
+    sub_type:{type:String,default:"abc"},
+    category:{type:String,default:"abc"},
+    colour:{type:String,default:"abc"},
     price:{type:Number,required:true},
     offprice:{type:Number,default:0},
     quantity:{type:Number,default:10},
-    brand:{type:String,required:true},
-    discription:{type:String,required:true},
-    image1:{type:String,required:true},
+    brand:{type:String,default:"abc"},
+    discription:{type:String,default:"abc"},
+    image1:{type:String,default:"abc"},
     image2:{type:String,default:"url not added"},
     image3:{type:String,default:"url not added"},
     user_id:{type:String,required:true}
