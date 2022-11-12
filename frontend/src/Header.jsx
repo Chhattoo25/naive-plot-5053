@@ -1,4 +1,7 @@
 import React from 'react'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 
 const Header = () => {
@@ -7,7 +10,8 @@ const Header = () => {
       <div className='navbar'>
       
       <div className='before-menu'>
-        <h1>MODESENS</h1>
+        {/* <h1>MODESENS</h1> */}
+        <img src="https://cdn.modesens.com/static/img/20190228newlogo-black.svg" alt="" />
       </div>
 
       <div className='menu-bar'>
@@ -184,7 +188,13 @@ const Header = () => {
     </div> 
         </div>
       </div>
-      <div className='after-menu'>3</div>
+      <div className='after-menu'>
+        3
+        <p><FontAwesomeIcon icon="fa-solid fa-bell" /></p>
+        <FontAwesomeIcon icon="check-square" />
+      Your <FontAwesomeIcon icon="coffee" /> is hot and ready!
+       {/* <img src={"../Icons/shopping-bag.jpg"} alt="" />   */}
+      </div>
 
    </div>
    <hr />

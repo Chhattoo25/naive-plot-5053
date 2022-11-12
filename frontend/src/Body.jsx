@@ -1,6 +1,10 @@
 
 import React from 'react'
 import Slider1 from './Slider1'
+import Slider2 from './Slider2'
+import Slider3 from './slider3'
+import Slider4 from './Slider4'
+import Slider5 from './Slider5'
 
 const Body = () => {
   return (
@@ -12,6 +16,11 @@ const Body = () => {
 
           {/* <heading>Special Offers</heading> */}
       </div>
+      <Slider2/>
+      <Slider3/>
+      <Slider4/>
+  <Slider5/>
+  
     </div>
   )
 }

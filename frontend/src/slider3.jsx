@@ -4,9 +4,10 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 import './App.css';
-import { dataDigitalBestSeller1 } from './data';
+// import div1 from './div1';
+import { dataDigitalBestSeller3 } from './data';
 
-function Slider2() {
+function Slider3() {
   
   const settings = {
     
@@ -16,7 +17,7 @@ function Slider2() {
     infinite: true,
     speed: 1000,
     // autoplay: true,
-    slidesToShow: 3,
+    slidesToShow: 4,
         slidesToScroll: 1,
 
   };
@@ -24,20 +25,16 @@ function Slider2() {
   return (
     <div className="Slider1">
          <Slider {...settings}>
-        {dataDigitalBestSeller1.map((item) => (
-          <div className="card1">
-            <div className="card-top1">
+        {dataDigitalBestSeller3.map((item) => (
+          <div className="card2">
+            <div className="card-top2">
               <img
                 src={item.linkImg}
                 alt={item.title}
                
               />
-              <h1>{item.title}</h1>
             </div>
-            <div className="card-bottom1">
-              <h3>{item.description}</h3>
-              {/* <span className="category">{item.category}</span> */}
-            </div>
+         
           </div>
         ))}
       </Slider>
@@ -45,4 +42,4 @@ function Slider2() {
   );
 }
 
-export default Slider2;
+export default Slider3;
