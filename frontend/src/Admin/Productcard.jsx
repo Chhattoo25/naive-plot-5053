@@ -1,6 +1,7 @@
 import { Box, Button, Image, Text } from '@chakra-ui/react'
 import axios from 'axios'
 import React, { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 function Productcard(item) {
     const handleDelete=(id)=>{
@@ -25,6 +26,7 @@ function Productcard(item) {
             <Text>Name:{item.data.name}</Text>
             <Text>Title:{item.data.title}</Text>
             <Text>Price:${item.data.price}</Text>
+            <Text>Quantity:${item.data.quantity}</Text>
             </Box>
 
             <Box display={"flex"}>
@@ -34,7 +36,8 @@ function Productcard(item) {
             </Box>
 
             <Box>
-                <Button colorScheme='blue' mb={"2%"}>Edit</Button>
+              <Link to={`/updateproduct/${item.data._id}`}><Button colorScheme='blue' mb={"2%"}>Edit</Button></Link>
+                
                 <br />
                 <Button colorScheme='red' onClick={()=>handleDelete(item.data._id)} >Delete</Button>
             </Box>
