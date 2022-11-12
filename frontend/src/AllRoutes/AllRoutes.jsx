@@ -4,9 +4,14 @@ import Women from "../pages/WomensPage/Women";
 import Beauty from "../components/Beauty_Component/Beauty";
 import Men from "../pages/MensPage/Men";
 import Cart from "../components/Cart/Cart";
+
+
+import Adminupdateproduct from "../pages/AdminPage/Adminupdateproduct";
+
 import Admin_home from '../pages/AdminPage/Admin_home'
 import WomenProduct from "../pages/WomensPage/WomenProduct";
 import MenProduct from "../pages/MensPage/MenProduct";
+
 
 const AllRoutes = () => {
   return (
@@ -18,7 +23,10 @@ const AllRoutes = () => {
         <Route path="/mens" element={<Men />} />
         <Route path="/mens/product" element={<MenProduct/>} />
         <Route path="/beauty" element={<Beauty />} />
-        {/* <Route path='/admin' element={<Admin_home/>}/> */}
+
+        <Route path='/admin' element={<Admin_home/>}/>
+        <Route path='/updateproduct/:id' element={<Adminupdateproduct/>}/>
+
         <Route path="/cart" element={<Cart />} />
         
       </Routes>

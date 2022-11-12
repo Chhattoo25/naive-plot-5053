@@ -21,6 +21,7 @@ function Adminupdate() {
   const [brand,setBrand]=useState("")
   const [category,setCategory]=useState("")
   const [colour,setColour]=useState("")
+  const [quantity,setQuantity]=useState("")
   
 
   const handleSubmit=()=>{
@@ -37,7 +38,8 @@ function Adminupdate() {
       image3:image3,
       brand:brand,
       colour:colour,
-      category:category
+      category:category,
+      quantity:Number(quantity)
      }
 
      const token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjM2Y2FkYjM3YjRkZGRhNTc4ZjNlZWVhIiwiaWF0IjoxNjY4MTUyMzcwfQ.ioJXgNiBV65ttbJaXleTd2gwou45J1DfOTdWKkeEc4Y"
@@ -80,6 +82,9 @@ function Adminupdate() {
 
          <FormLabel>Size</FormLabel>
          <Input type='text' onChange={(e)=>setSize(e.target.value)}  />
+         
+         <FormLabel>Quantity</FormLabel>
+         <Input type='Number' onChange={(e)=>setQuantity(e.target.value)}  />
          </Box>
 
         <Box display={"flex"}>
@@ -88,6 +93,7 @@ function Adminupdate() {
             <option value='men'>Men</option>
             <option value='women'>Women</option>
             <option value='kids'>Kids</option>
+            <option value='beauty'>Beauty</option>
          </Select>
          
 

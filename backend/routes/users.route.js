@@ -35,7 +35,7 @@ userRouter.post("/signup", async (req, res) => {
             type
         })
         const token = await registerEmployee.generateAuthToken();
-            //console.log("the token part" + token);
+            console.log("the token part" + token);
 
             res.cookie("jwt", token, {
                 expires: new Date(Date.now() + 30000),

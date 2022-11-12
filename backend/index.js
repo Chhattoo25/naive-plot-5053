@@ -8,6 +8,8 @@ app.use(cors())
 app.use(express.json())
 require('./config/google-outh');
 
+
+
 const {userRouter}=require("./routes/users.route")
 app.use("/user",userRouter)
 

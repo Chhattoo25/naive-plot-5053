@@ -9,14 +9,10 @@ import Header from './Header';
 function App() {
   return (
     <div className="App">
-         {/* <AllRoutes/> */}
-         <Header/>
-       {/* <Body/>
-      
-       <example/>  */}
-        <Footer/>
-   
+ <AllRoutes/> 
+
        </div> 
+
 
 
  );
