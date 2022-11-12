@@ -1,7 +1,6 @@
 const passport =require('passport')
 const express=require("express")
 const { connection } = require("./config/db")
-
 const fileUpload=require("express-fileupload")
 const app=express()
 const cors=require("cors")
@@ -13,7 +12,9 @@ const {userRouter}=require("./routes/users.route")
 app.use("/user",userRouter)
 
 const { productsRouter } = require("./routes/products.route")
+const { serachRoute } = require('./routes/search')
 app.use("/product",productsRouter)
+app.use("/api",serachRoute)
 
 app.get('/',(req,res)=>{
     res.send("Homepage2")
