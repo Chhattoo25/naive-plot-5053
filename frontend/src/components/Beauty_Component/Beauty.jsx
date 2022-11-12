@@ -1,6 +1,6 @@
 import { Box, Button, Center, Flex, Heading, Image, SimpleGrid, Spacer,Text  } from '@chakra-ui/react';
 import { ChevronDownIcon, SearchIcon } from '@chakra-ui/icons'
-import React from 'react'
+import React, { useState } from 'react'
 import {
     Accordion,
     AccordionItem,
@@ -18,25 +18,57 @@ import {
 import {useDispatch, useSelector} from "react-redux";
 import { useEffect } from 'react';
 import { getData } from '../../redux/AppReducer/Action';
-import ProductList from './ProductList';
+import CardModal from './CardModal';
+import { useSearchParams } from 'react-router-dom';
 
 const Beauty = () => {
-
     const data = useSelector((state) => state.data);
     const dispatch = useDispatch();
+    const [searchParams,setSearchParams] = useSearchParams();
+    const initialCategory = searchParams.getAll("category");
+    const [category, setCategory] = useState(initialCategory || []);
+    const [sort, setSort] = useState("asc")
+    let params = {
+        // _sort: "price",
+        _order: sort
+    }
 
     useEffect(() => {
         if(data.length === 0){
             dispatch(getData())
         }
     },[])
-    console.log(data)
 
+    useEffect(() => {
+        if(category){
+            category &&(params.category = category);
+            setSearchParams(params)
+            dispatch(getData(params)).then((res) => {
+                const productCard = document.querySelectorAll(".beauty_container");
+                productCard?.forEach((item) => {
+                    item.addEventListener("mouseenter", () => {
+                        let button = item.children[1].children[0].lastChild;
+                        // button.style.bottom = "0";
+                        // button.style.opacity = "1";
+                        // button.style.backgroundcolor = "black";
+                    })
+                })
+
+                productCard?.forEach((item) => {
+                    item.addEventListener("mouseleave", () => {
+                      let button = item.children[1].children[0].lastChild;
+                    //   button.style.bottom = "-50px";
+                    //   button.style.opacity = "0";
+                    });
+                  });
+            })
+        }
+    },[sort])
 
     
   return (
-    <Box borderWidth={4} w='100%' borderColor='black' >
-        <Box borderWidth={2} borderColor='red' height='100px' w='80%' ml='20%' >
+    <Box  w='100%'  >
+        <Box height='100px' w='80%' ml='20%' >
             <Box fontWeight={500} lineHeight='40px' fontSize='1.71rem' color='#1c1c1c' fontFamily='SuisseIntl' pt={2}>
                 Designer Beauty
             </Box>
@@ -46,7 +78,7 @@ const Beauty = () => {
 
         <Flex>
             {/* filter and sorting box */}
-            <Box borderWidth={2} borderColor='pink' w='20%' pl={2}>
+            <Box  w='20%' pl={2}>
                 <Box fontFamily='SuisseIntl' color='#8e8e8e' alignItems='center'>MODESENS / SHOP / BEAUTY</Box>
 
                 <Flex pt={2}>
@@ -164,7 +196,7 @@ const Beauty = () => {
 
             {/* all items */}
 
-            <Box borderWidth={2} borderColor='gray' w='80%'>
+            <Box w='80%'>
 
                 {/* adding sorting key */}
 
@@ -173,11 +205,11 @@ const Beauty = () => {
                         <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
                             Best Sellers
                         </MenuButton>
-                        <MenuList>
+                        <MenuList >
                             <MenuItem>New Arrivals</MenuItem>
                             <MenuItem>Most liked</MenuItem>
-                            <MenuItem>Highest Price</MenuItem>
-                            <MenuItem>Lowest Price</MenuItem>
+                            <MenuItem onClick={() => setSort("desc")}>Highest Price</MenuItem>
+                            <MenuItem onClick={() => setSort("asc")}>Lowest Price</MenuItem>
                             <MenuItem>New Sale</MenuItem>
                         </MenuList>
                     </Menu>
@@ -185,10 +217,25 @@ const Beauty = () => {
 
                 <Box>
                     <SimpleGrid columns={[1, 1, 3, 4]}>
+
+                        {/* mapping all the data */}
                         
-                            {data.length > 0 && data.map((item) => {
-                                return <ProductList key={item.id} productData={item}/>
-                            })}
+                            {data.length > 0 && data.map((productData) => {
+                                
+                                return <Box borderWidth={1} fontFamily='SuisseIntl' className='beauty_container'>
+                                            <Box className='imageContainer'><Image className='productImage' src={productData.image_url} alt=''/>
+                                            </Box>
+                                            <Box className='overlay'></Box>
+                                            <CardModal productData={productData} />
+                                            <Heading textAlign='center' fontSize='14px' fontWeight={700} lineHeight='18px'>{productData.brand}</Heading>
+                                            <Text textAlign='center' pt={2} color='#8e8e8e' fontSize='0.85rem'>{productData.title}</Text>
+                                            <Flex gap={4} ml='7rem'>
+                                                <Text as='del' color='red'>${productData.offprice}</Text>
+                                                <Text>${productData.price}</Text>
+                                            </Flex>
+                                
+                                        </Box>
+                                })}
                         
                     </SimpleGrid>
                 </Box>
