@@ -12,7 +12,7 @@ const chevronWidth = 80;
 const Wrapper = styled.div`
   padding: 0 ${chevronWidth}px;
   max-width: 1200px;
-  margin-top: 20px;
+  margin-top: 30px;
   margin-bottom: 100px;
   position: relative;
 `;
@@ -107,7 +107,7 @@ const carouselItems = trending.map((e,index) => (
     >
       <SlideItem style={{ width: "100%" }} src={e.src} />
     </div>
-    <div style={{ display: "flex", justifyContent: "center" ,marginBottom:"20px"}}>
+    <div style={{ display: "flex", justifyContent: "center" ,marginBottom:"40px"}}>
       <Button>Quick View</Button>
     </div>
     <TextDiv className="textDiv">
@@ -150,6 +150,7 @@ export default class AutoPlayCarousel extends React.Component {
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
+            
           }}
         >
           <div style={{ width: "40%", alignItems: "center" }}>

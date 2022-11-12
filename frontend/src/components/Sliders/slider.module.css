@@ -12,7 +12,7 @@
 }
 .slide_3 > div:nth-child(2) {
   width: 22.625rem !important;
-
+  margin: 60px 0px 20px 20px;
   height: 9.063rem;
 }
 
@@ -21,7 +21,7 @@
   font-weight: 500;
 }
 .slide_3 > div:nth-child(2) > p:nth-child(2) {
-  margin-top: -10px;
+  margin-top: 10px;
 }
 
 .slide_3 > div:nth-child(2) > button {
