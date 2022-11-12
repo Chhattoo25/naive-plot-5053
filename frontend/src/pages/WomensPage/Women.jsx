@@ -2,6 +2,10 @@ import React from 'react'
 import TopSlider from '../../components/Sliders/TopSlider'
 import styled from 'styled-components'
 import SecondSlider from '../../components/Sliders/SecondSlider'
+import ThirdSlider from '../../components/Sliders/ThirdSlider'
+import Trending from '../../components/Sliders/TrendingNow';
+import CommunityPost from "../../components/Sliders/CommunityPost"
+import Bottom from '../../components/Sliders/Bottom'
 const Women = () => {
   return (
     <MainDiv>
@@ -16,7 +20,10 @@ const Women = () => {
         <hr />
         <p>Special Offers</p>
       </SpecialOffer>
-      
+      <ThirdSlider/>
+    <Trending/>
+    <CommunityPost/>
+    <Bottom/>
     </MainDiv>
   )
 }
@@ -43,7 +50,8 @@ margin: auto;
 `
 
 const SpecialOffer = styled.div`
-  margin-top: 5rem;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
   position: relative;
   p{
     font-size: 1.8rem;
