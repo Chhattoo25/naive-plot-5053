@@ -1,10 +1,11 @@
 import React from "react";
 import Slider from "react-slick";
-
+import Styles from './slider.module.css'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
-import styled from "styled-components";
+
+
 
 function NextArrow(props) {
   const { className, style, onClick } = props;
@@ -16,7 +17,10 @@ function NextArrow(props) {
         display: "block",
         color: "black",
         height: "2.5rem",
-        width: "2.5rem",
+        width: "3.0rem",
+        padding:"0rem 0rem 0rem 1.5rem"
+
+
       }}
       onClick={onClick}
     />
@@ -34,6 +38,7 @@ function PrevArrow(props) {
         color: "black",
         height: "2.5rem",
         width: "2.5rem",
+       padding:"0rem 1rem 0rem 0rem"
       }}
       onClick={onClick}
     />
@@ -50,12 +55,12 @@ const ThirdSlider = () => {
     prevArrow: <PrevArrow />,
   };
   return (
-    <div>
+    <>
       <Slider {...settings}>
-        <div className={Styles.popUp__3}>
+        <div className={Styles.slide_3}>
           <div>
             <img
-              src="https://cdn.modesens.com/banner/20220531-modesens-Sale-364x484.jpg"
+              src="https://cdn.modesens.com/banner/20221011-modesens-sale-364x484_1665469252.jpg"
               alt=""
               width="100%"
               height="100%"
@@ -67,10 +72,10 @@ const ThirdSlider = () => {
             <button>SHOP NOW</button>
           </div>
         </div>
-        <div className={Styles.popUp__3}>
+        <div className={Styles.slide_3}>
           <div>
             <img
-              src="https://cdn.modesens.com/banner/20220609-modesens-FPillowBags-364x484-F.jpg"
+              src="https://cdn.modesens.com/banner/20221109-modesens-Bernardelli-364x484.jpg"
               alt=""
               width="100%"
               height="100%"
@@ -82,10 +87,10 @@ const ThirdSlider = () => {
             <button>SHOP NOW</button>
           </div>
         </div>
-        <div className={Styles.popUp__3}>
+        <div className={Styles.slide_3}>
           <div>
             <img
-              src="https://cdn.modesens.com/banner/20220615-modesens-SummerFashionGuide-364x484.jpg"
+              src=	"https://cdn.modesens.com/banner/20221110-modesens-SweaterWeather-364x484-F_1667895865.jpg"
               alt=""
               width="100%"
               height="100%"
@@ -97,10 +102,25 @@ const ThirdSlider = () => {
             <button>SHOP NOW</button>
           </div>
         </div>
-        <div className={Styles.popUp__3}>
+        <div className={Styles.slide_3}>
           <div>
             <img
-              src="https://cdn.modesens.com/banner/20220610-modesens-blog-364x484-F.jpg"
+              src="https://cdn.modesens.com/banner/20221111-modesens-blog-364x484_1668151319.jpg"
+              alt=""
+              width="100%"
+              height="100%"
+            />
+          </div>
+          <div>
+            <p>Less Season and More Sizes</p>
+            <p>Blog by SSENCE</p>
+            <button>Read Now</button>
+          </div>
+        </div>
+         <div className={Styles.slide_3}>
+          <div>
+            <img
+              src="https://cdn.modesens.com/banner/20221110-modesens-Platforms-364x484-F_1667895865.jpg"
               alt=""
               width="100%"
               height="100%"
@@ -113,14 +133,9 @@ const ThirdSlider = () => {
           </div>
         </div>
       </Slider>
-    </div>
+    </>
   );
 };
 
 export default ThirdSlider;
 
-
-const BOX = styled.div`
-
-
-`
