@@ -1,0 +1,38 @@
+.slide_3 {
+  width: 22.563rem !important;
+  height: 35.375rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.slide_3 > div:nth-child(1) {
+  width: 22.625rem !important;
+  height: 26.938rem;
+}
+.slide_3 > div:nth-child(2) {
+  width: 22.625rem !important;
+
+  height: 9.063rem;
+}
+
+.slide_3 > div:nth-child(2) > p:nth-child(1) {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.slide_3 > div:nth-child(2) > p:nth-child(2) {
+  margin-top: -10px;
+}
+
+.slide_3 > div:nth-child(2) > button {
+  padding: 10px 30px;
+  font-size: 0.9rem;
+  background-color: transparent;
+  outline: none;
+  border: 1px solid black;
+  margin-top: 10px;
+}
+.slide_3 > div:nth-child(2) > button:hover {
+  color: white;
+  background: black;
+}
