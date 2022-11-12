@@ -1,16 +1,12 @@
 import AllRoutes from './AllRoutes/AllRoutes';
-import Search from './components/Search';
-import Header from './Header';
 
+import './App.css';
+import Header from './Header';
 function App() {
   return (
-    <>
-    <Search/>
+    <div className="App">
       <AllRoutes/>
-    </>
-   
- );
-
-}
+    </div>
+  );
 
 export default App;
