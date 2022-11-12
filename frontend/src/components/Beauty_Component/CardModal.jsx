@@ -65,26 +65,27 @@ import {
         >
           Quick View
         </button>
-        <Modal onClose={onClose} size={"3xl"} isOpen={isOpen}>
+        <Modal onClose={onClose} size={"4xl"} isOpen={isOpen}>
           <ModalOverlay />
           <ModalContent>
             <ModalHeader>{}</ModalHeader>
             <ModalCloseButton />
             <ModalBody>
               <Flex>
-                <Box width="1300px">
-                  <Image width="400px" src={productData.image_url} />
+                <Box width="500px" h='400px'>
+                  <Image width="400px" h='400px' src={productData.image_url} />
                 </Box>
                 <Box>
                   <Heading as="h4" size="md">
-                    {productData.title}
+                    {productData.brand}
                   </Heading>
-                  <Text>{productData.brand}</Text>
-                  <Text>BEST SELLER CONSCIOUS BEAUTY</Text>
-                  <Text padding="10px 3px">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Pariatur rerum placeat modi molestiae numquam tempore
-                    doloremque doloribus aliquam suscipit voluptates.
+                  <Text>{productData.title}</Text>
+                  <Text fontWeight='semibold' >${productData.price}</Text>
+                  <Text fontWeight='semibold'  padding="10px 3px">
+                   Shop From 5 Stores
+                  </Text>
+                  <Text fontWeight='semibold'  padding="10px 3px">
+                  Join now to earn up to 345 points when you buy
                   </Text>
                   <Box>
                     <Menu>
@@ -94,7 +95,7 @@ import {
                         as={Button}
                         rightIcon={<ChevronDownIcon />}
                       >
-                        Actions
+                        Select Size
                       </MenuButton>
                       <MenuList>
                         <MenuItem width="100%"></MenuItem>
