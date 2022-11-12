@@ -3,7 +3,13 @@ const userRouter=express.Router()
 const { UserModel } = require("../models/User.model");
 const bcrypt = require('bcrypt');
 const jwt = require("jsonwebtoken");
+const {autherisation} =require('../middlewares/autherisation')
 require("dotenv").config()
+
+const app=express();
+
+const cookieparser = require("cookie-parser");
+app.use(cookieparser());
 
 
 userRouter.get("/",(req,res)=>{
@@ -28,6 +34,17 @@ userRouter.post("/signup", async (req, res) => {
             password : hash,
             type
         })
+        const token = await registerEmployee.generateAuthToken();
+            //console.log("the token part" + token);
+
+            res.cookie("jwt", token, {
+                expires: new Date(Date.now() + 30000),
+                httpOnly: true
+            });
+            console.log(`tour cookie:- ${cookie}`);
+
+            const registered = await registerEmployee.save();
+            res.status(201).render("login");
         try{
             await new_user.save()
             res.send({"msg" : "Sign up successfull"})
@@ -60,5 +77,25 @@ userRouter.post("/login", async (req, res) => {
     });
 })
 
+
+app.get("/logout", autherisation,async(req,res)=>{
+    try {
+        console.log(req.user);
+// logout from only one device
+        req.user.tokens =req.user.tokens.filter((currElement)=>{
+            return currElement.token !== req.token
+        })
+//logout from all devices like netflix
+        req.user.tokens = [];
+
+        res.clearCookie("jwt");
+        console.log("logout successfully");
+
+        await req.user.save();
+        res.render("login");
+    } catch (error) {
+        res.status(500).send(error)
+    }
+})
 
 module.exports={userRouter}
