@@ -1,6 +1,27 @@
 import AllRoutes from './AllRoutes/AllRoutes';
 
 import './App.css';
+
+import Body from './Body';
+import Footer from './Footer';
+import Header from './Header';
+
+function App() {
+  return (
+    <div className="App">
+         {/* <AllRoutes/> */}
+         <Header/>
+       {/* <Body/>
+      
+       <example/>  */}
+        <Footer/>
+   
+       </div> 
+
+
+ );
+}
+
 import Header from './Header';
 function App() {
   return (
@@ -8,5 +29,6 @@ function App() {
       <AllRoutes/>
     </div>
   );
+
 
 export default App;
