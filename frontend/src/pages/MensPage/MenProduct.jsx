@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components';
 import { FilterDiv } from '../../components/MenWomenProducts/FilterDiv'
-import WomenData from '../../components/MenWomenProducts/WomenData'
+import MensData from '../../components/MenWomenProducts/MensData'
+
 
 const Wrapper = styled.div`
   display: flex;
@@ -14,8 +15,7 @@ const Right = styled.div`
   width: 75%;
   padding-left: 10px;
 `;
-
-const WomenProduct = () => {
+const MenProduct = () => {
   return (
     <div>
 <Wrapper>
@@ -23,7 +23,7 @@ const WomenProduct = () => {
           <FilterDiv />
         </Left>
         <Right>
-          <WomenData />
+          <MensData />
         </Right>
       </Wrapper>
 
@@ -31,4 +31,4 @@ const WomenProduct = () => {
   )
 }
 
-export default WomenProduct
+export default MenProduct
