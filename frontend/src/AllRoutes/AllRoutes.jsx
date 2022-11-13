@@ -4,7 +4,7 @@ import Women from "../pages/WomensPage/Women";
 import Beauty from "../components/Beauty_Component/Beauty";
 import Men from "../pages/MensPage/Men";
 import Cart from "../components/Cart/Cart";
-
+import Header from '../Header'
 
 import Adminupdateproduct from "../pages/AdminPage/Adminupdateproduct";
 
@@ -18,6 +18,7 @@ const AllRoutes = () => {
     <div>
       <Routes>
         <Route path="/" element={<h1>Modesens Home page</h1>} />
+        <Route path="/navbar" element={<Header/>} />
         <Route path="/womens" element={<Women />} />
         <Route path="/womens/product" element={<WomenProduct />} />
         <Route path="/mens" element={<Men />} />
