@@ -40,7 +40,7 @@ const Footer = () => {
 <div className='footer_customer'>
             <heading>  CONNECT WITH US</heading>
             <br /><br /><br />
-            <div>
+            <div style={{display:"flex",gap:"10px"}}>
                 <img src="https://cdn.modesens.com/static/img/20220815download_ios.svg" alt="" />
                 <img src="https://cdn.modesens.com/static/img/20220815download_android.svg" alt="" />
                 <img src="https://cdn.modesens.com/static/img/20220815down_chromestrore.svg" alt="" />
