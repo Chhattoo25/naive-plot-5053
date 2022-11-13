@@ -5,30 +5,36 @@ import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import { Subtotal } from "./SubTotal";
 
 
 const Cart = () => {
   const navigate = useNavigate();
-  // const [data, setData] = useState([])
-  const [localData, setLocalData] = useState([]);
+  const [data, setData] = useState([]);
+  const [price, setPrice] = useState(0);
+
+  const getData = () => {
+    return axios.get("http://localhost:8000/cart").then((r) => {
+      setData(r.data.data)
+      
+    })
+  };
+
   
-  // const getData = () => {
-  //   return axios.get("http://localhost:8080/cart").then((r) => {
-  //     setData(r.data.data)
-  //   })
-  // };
-
+  const handleDelete = (_id) => {
+    console.log(_id)
+    axios.delete(`http://localhost:8000/cart/deleteorder/${_id}`).then((r) => {
+      getData()
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+  }
+  
   useEffect(() => {
-    const prod = JSON.parse(localStorage.getItem("cart")) || [];
-    setLocalData(prod)
-  },[])
-console.log("local",localData);
-  // useEffect(() => {
-  //   getData();
-  // },[data.length]);
-
-  if(localData.length === 0){
-    console.log(localData);
+    getData();
+  },[]);
+  if(data.length === 0){
     return (
       <div style={{textAlign: "center"}}>
           <Box
@@ -64,7 +70,7 @@ console.log("local",localData);
           alignItems="center"
           colorScheme="facebook"
           marginBottom="30px"
-          onClick={() => navigate("/brandProducts")}
+          onClick={() => navigate("/beauty")}
         >
           ADD SOMETHING
         </Button>
@@ -74,7 +80,7 @@ console.log("local",localData);
   
   return (
     <div>
-      <Box w="100%" alignItems="center" border="2px solid red">
+      <Box w="100%" alignItems="center" >
         <Box
           textAlign="center"
           fontWeight={700}
@@ -104,42 +110,44 @@ console.log("local",localData);
         {/* *********mapping the data********* */}
 
       <div>
-        {localData?.map((item) => {
-          console.log("item:",item);
-          <Flex border="2px solid" textAlign="center">
-            <Box border="2px solid red" w="700px" ml="12rem">
+      <Flex textAlign="center">
+          
+         <Box  w="730px" ml="12rem">
               <Box textAlign="left" fontWeight="semibold">
                 SHOPPING BAG
               </Box>
-              <Box w="100%" borderWidth={4}>
+        {data?.map((item) => {
+               return <Box w="100%" height='300px' borderWidth={4}>
                 <Grid templateColumns="repeat(4, 1fr)">
-                  <GridItem w="150px" border="2px solid black">
+                  <GridItem w="150px" >
                     <img
-                      // src="https://cdn.mod/esens.com/product/16731490_11?w=100"
                       src={item.image1}
                       alt=""
+                      
                     />
                   </GridItem>
-                  <GridItem w="400px" border="2px solid black" textAlign="left">
-                    <Text>ST. TROPEZ</Text>
-                    <Text>Self Tan Express Bronzing Mist In Brown,orange</Text>
-                    <Text>Size: One Size</Text>
-                    <Text>Quantity: 1</Text>
+                  <GridItem w="400px" textAlign="left">
+                    <Text>{item.title}</Text>
+                    <Text>{item.name}</Text>
+                    <Text>{`Size: ${item.size}`}</Text>
+                    <Text>{`Quantity: ${item.quantity}`}</Text>
                   </GridItem>
-                  <GridItem w="120px" border="2px solid black" textAlign="left">
+                  <GridItem w="120px" textAlign="left">
                     <Text mt="1.5rem" fontWeight="semibold">
-                      $40.00
+                      ${item.price}
                     </Text>
-                    <Text mt="4rem">Save For Later</Text>
+                    <Text mt="4rem" >Save For Later</Text>
                   </GridItem>
-                  <GridItem w="20px" border="2px solid black" fontWeight="bold">
-                    x
+                  <GridItem w="40px"  fontWeight="bold" >
+                  <Button onClick={() => handleDelete(item._id)}>x</Button>
                   </GridItem>
                 </Grid>
               </Box>
-            </Box>
+          
+        })}
+        </Box>
             <Spacer />
-            <Box w="400px" border="2px solid teal" mr="12rem">
+            <Box w="420px" mr="12rem">
               <Box textAlign="left" fontWeight="semibold">
                 SUMMARY
               </Box>
@@ -151,14 +159,14 @@ console.log("local",localData);
                 </Flex>
                 <Flex mt="0.4rem">
                   <Text>
-                    1
-                    {/* `(${localData.length} Items)` */}
+                    (`${data.length} Items`)
                   </Text>
                   <Spacer />
                   <Text>
-                    $40.00
-                    {/* Subtotal */}
-                    {item.price.slice(1) * item.qty}
+                    {/* {data.price * data.qty} */}
+                    {/* $36.00 */}
+                    {/* <Subtotal product={[...data]}/> */}
+                    {/* {data.price.slice(1) * data.qty} */}
                   </Text>
                 </Flex>
                 <Link to='/payment'>
@@ -176,12 +184,11 @@ console.log("local",localData);
                 </Text>
               </Box>
             </Box>
-          </Flex>
-        })}
+            </Flex>
       </div>
       </Box>
     </div>
   );
-};
 
+  }
 export default Cart;
