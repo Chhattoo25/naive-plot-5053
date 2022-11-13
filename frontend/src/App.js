@@ -1,6 +1,6 @@
 
 import AllRoutes from "./AllRoutes/AllRoutes";
-import Header from './Header';
+// import Header from './Header';
 import './App.css';
 import Search from "./components/SearchComp/Search";
 function App() {
@@ -10,6 +10,7 @@ function App() {
     <Header/>
       <AllRoutes />
       {/* <Footer/> */}
+
     </div>
   );
 }

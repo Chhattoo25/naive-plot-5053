@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React  from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import './App.css';
+// import './App.css';
 // import div1 from './div1';
-import { dataDigitalBestSeller3 } from './data';
+import { dataDigitalBestSeller3 } from '../../pages/Navbar/data';
 
 function Slider3() {
   
