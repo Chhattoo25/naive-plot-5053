@@ -10,7 +10,7 @@ import axios from 'axios'
 function Adminupdate() {
   const [title,setTitle]=useState("")
   const [name,setName]=useState("")
-  const [type,setType]=useState("")
+  const [gender,setGender]=useState("")
   const [price,setPrice]=useState("")
   const [subtype,setSubtype]=useState("")
   const [size,setSize]=useState("")
@@ -28,7 +28,7 @@ function Adminupdate() {
      const payload={
       title:title,
       name:name,
-      type:type,
+      gender:gender,
       price:price,
       sub_type:subtype,
       size:size,
@@ -60,40 +60,34 @@ function Adminupdate() {
 
   return (
     <div>
+      
       <Box  w='100%' p={4} color='white'>
       <FormControl  color={"black"}>
-        <Box display={"flex"}>
+
+      <Box display={"flex"}>
          <FormLabel>Product Title</FormLabel>
          <Input type='text'  onChange={(e)=>setTitle(e.target.value) }  />
          
          <FormLabel>Product Name</FormLabel>
          <Input type='text' onChange={(e)=>setName(e.target.value)}  />
          </Box>
-         
-         <Box display={"flex"}>
-         <FormLabel>Type</FormLabel>
-         <Input type='text' onChange={(e)=>setType(e.target.value)} />
-
-         <FormLabel>Sub-Type</FormLabel>
-         <Input type='text' onChange={(e)=>setSubtype(e.target.value)} />
-        
-         <FormLabel>Price</FormLabel>
-         <Input type='text' onChange={(e)=>setPrice(e.target.value)}  />
-
-         <FormLabel>Size</FormLabel>
-         <Input type='text' onChange={(e)=>setSize(e.target.value)}  />
-         
-         <FormLabel>Quantity</FormLabel>
-         <Input type='Number' onChange={(e)=>setQuantity(e.target.value)}  />
-         </Box>
 
         <Box display={"flex"}>
-         <FormLabel>Category</FormLabel>
-         <Select placeholder='Select option' onChange={(e)=>setCategory(e.target.value)}>
+         <FormLabel>Gender</FormLabel>
+         <Select placeholder='Select option' onChange={(e)=>setGender(e.target.value)}>
             <option value='men'>Men</option>
             <option value='women'>Women</option>
             <option value='kids'>Kids</option>
+         </Select>
+
+         <FormLabel>Category</FormLabel>
+         <Select placeholder='Select option' onChange={(e)=>setCategory(e.target.value)}>
+            <option value='clothing'>Clothing</option>
+            <option value='shoes'>Shoes</option>
+            <option value='bags'>Bags</option>
             <option value='beauty'>Beauty</option>
+            <option value='accessories'>Accessories</option>
+            <option value='home'>Home</option>
          </Select>
          
 
@@ -119,6 +113,24 @@ function Adminupdate() {
             <option value='armani'>Armani</option>
             <option value='u.s polo'>U.S Polo</option>
          </Select>
+         </Box>
+
+
+        
+         
+         <Box display={"flex"}>
+
+         <FormLabel>Sub-Type</FormLabel>
+         <Input type='text' onChange={(e)=>setSubtype(e.target.value)} />
+        
+         <FormLabel>Price</FormLabel>
+         <Input type='text' onChange={(e)=>setPrice(e.target.value)}  />
+
+         <FormLabel>Size</FormLabel>
+         <Input type='text' onChange={(e)=>setSize(e.target.value)}  />
+         
+         <FormLabel>Quantity</FormLabel>
+         <Input type='Number' onChange={(e)=>setQuantity(e.target.value)}  />
          </Box>
          
          <Box display={"flex"} margin="1%">

@@ -1,17 +1,17 @@
 
-import AllRoutes from './AllRoutes/AllRoutes';
-
-import "./App.css"
-import WomenProduct from './pages/WomensPage/WomenProduct';
+import AllRoutes from "./AllRoutes/AllRoutes";
+import Header from './Header';
+import './App.css';
 function App() {
   return (
     <div className="App">
-      <AllRoutes/>
-      {/* <Body/> */}
-      {/* <WomenProduct/> */}
+    {/* <Header/> */}
+      <AllRoutes />
+      {/* <Footer/> */}
+
     </div>
   );
+}
 
 
-  }
 export default App;

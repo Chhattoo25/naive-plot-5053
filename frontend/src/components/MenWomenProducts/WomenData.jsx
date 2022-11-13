@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import styles from "./Pagination.module.css";
 import { Link } from "react-router-dom";
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons'
+import CardModal from "../Beauty_Component/CardModal";
 const Wrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -99,9 +100,6 @@ const WomenData = () => {
 
   useEffect(() => {
     getdata();
-    console.log("data recieved")
-    console.log(page)
-    console.log(page);
   }, [page]);
   //_page=${page}&_limit=16
   async function getdata() {
@@ -117,18 +115,15 @@ const WomenData = () => {
     localStorage.setItem("IndData", JSON.stringify(e));
   };
   function handleSort(e) {
-    // console.log("hello")
-    // console.log(e.target.value)
+
     if (e.target.value === "highest_price") {
-      // console.log(items[0].price)
       items.sort((a, b) => b.price - a.price);
       setItems([...items]);
-      // console.log("hello")
+     
     } else if (e.target.value === "lowest_price") {
-      // console.log(items[0].price)
+      console.log(items[0].price)
       items.sort((a, b) => a.price - b.price);
       setItems([...items]);
-      // console.log("hello")
     }
   }
   return (
@@ -151,9 +146,7 @@ const WomenData = () => {
             <span onClick={() => setPage(3)}>3</span>
             <span onClick={() => setPage(4)}>4</span>
             <div className={styles.paginationDot}>
-              <c>.</c>
-              <c>.</c>
-              <c>.</c>
+              ...
             </div>
 
             <div className={styles.imgTag}>
@@ -218,7 +211,7 @@ const WomenData = () => {
                 handleUser(e);
               }}
             >
-              <Link to={`${e._id}`} style={{ textDecoration: "none" }}>
+              <Link to={`${e.id}`} style={{ textDecoration: "none" }}>
                 <HeartDIv>
                   <HeartImg
                     src="https://cdn.modesens.com/static/img/20210601heart.svg"
@@ -245,6 +238,7 @@ const WomenData = () => {
                 </div>
                 <div style={{ display: "flex", justifyContent: "center" }}>
                   <Button>Quick View</Button>
+                  {/* <CardModal productData={e} /> */}
                 </div>
                 <TextDiv>
                   <h5

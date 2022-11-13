@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./FilterSection.module.css";
 
 export const FilterDiv = () => {
+  useEffect(()=>{
+    
+  })
   return (
     <>
       <div className={styles.filterdiv}>
