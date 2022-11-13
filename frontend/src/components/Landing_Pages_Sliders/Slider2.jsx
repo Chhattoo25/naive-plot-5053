@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import './App.css';
-// import div1 from './div1';
-import { dataDigitalBestSeller3 } from './data';
+// import './App.css';
+import { dataDigitalBestSeller1 } from '../../pages/Navbar/data';
+import { Link } from 'react-router-dom';
 
-function Slider3() {
+function Slider2() {
   
   const settings = {
     
@@ -17,7 +17,7 @@ function Slider3() {
     infinite: true,
     speed: 1000,
     // autoplay: true,
-    slidesToShow: 4,
+    slidesToShow: 3,
         slidesToScroll: 1,
 
   };
@@ -25,16 +25,21 @@ function Slider3() {
   return (
     <div className="Slider1">
          <Slider {...settings}>
-        {dataDigitalBestSeller3.map((item) => (
-          <div className="card2">
-            <div className="card-top2">
+        {dataDigitalBestSeller1.map((item) => (
+          <div className="card1">
+            <div className="card-top1">
               <img
                 src={item.linkImg}
                 alt={item.title}
                
               />
+              <h1>{item.title}</h1>
             </div>
-         
+            <div className="card-bottom1">
+              <h3>{item.description}</h3>
+              <button><Link to="/womens/product">SHOP NOW</Link></button>
+              
+            </div>
           </div>
         ))}
       </Slider>
@@ -42,4 +47,4 @@ function Slider3() {
   );
 }
 
-export default Slider3;
+export default Slider2;

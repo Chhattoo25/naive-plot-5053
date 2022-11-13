@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React  from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import './App.css';
-import { dataDigitalBestSeller4 } from './data';
+// import './App.css';
+// import div1 from './div1';
+import { dataDigitalBestSeller3 } from '../../pages/Navbar/data';
 
-function Slider4() {
+function Slider3() {
   
   const settings = {
     
@@ -16,25 +17,24 @@ function Slider4() {
     infinite: true,
     speed: 1000,
     // autoplay: true,
-    slidesToShow: 1,
+    slidesToShow: 4,
         slidesToScroll: 1,
 
   };
 
   return (
-    <div className="Slider4">
+    <div className="Slider1">
          <Slider {...settings}>
-        {dataDigitalBestSeller4.map((item) => (
-          <div className="card4">
-            <div className="card-top4">
+        {dataDigitalBestSeller3.map((item) => (
+          <div className="card2">
+            <div className="card-top2">
               <img
                 src={item.linkImg}
                 alt={item.title}
                
               />
-           
             </div>
-   
+         
           </div>
         ))}
       </Slider>
@@ -42,4 +42,4 @@ function Slider4() {
   );
 }
 
-export default Slider4;
+export default Slider3;

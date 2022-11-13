@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React  from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import './App.css';
-import { dataDigitalBestSeller5 } from './data';
+// import './App.css';
+import { dataDigitalBestSeller5 } from '../../pages/Navbar/data';
 // import imgGirl from './assets/images/defaultImage.jpg';
 
 function Slider5() {
@@ -32,10 +32,10 @@ function Slider5() {
                 src={item.linkImg}
                 alt={item.title}/>
             </div>
-            <div>
+            <div className='slider_titles'>
                 <h4>{item.title}</h4>
                 <p>{item.description}</p>
-                <h2>{`${item.discount_price}-${item.price}`}</h2>
+                <h2>{item.discount_price}<span>-{item.price}</span></h2>
                 <footer>{item.compare}</footer>
             </div>
           </div>

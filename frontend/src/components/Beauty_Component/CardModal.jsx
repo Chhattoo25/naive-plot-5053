@@ -24,6 +24,8 @@ import {
   import { RiDislikeLine } from "react-icons/ri";
   import { BsFillBagPlusFill } from "react-icons/bs";
   import  "./Beauty.css";
+import axios from "axios";
+import { useEffect } from "react";
 
 
   const CardModal = ({ productData }) => {
@@ -34,7 +36,7 @@ import {
     // const handleAddtoCart = (item) => {
     //   if (!item.qty) {
     //     item.qty = qty;
-    //     axios.post(`http://localhost:8080/cart`, item).then(() => {
+    //     axios.post(`http://localhost:8000/cart`, item).then(() => {
     //       toast({
     //         title: "Product add to cart!",
     //         status: "success",
@@ -43,7 +45,7 @@ import {
     //     });
     //   } else {
     //     item.qty = qty;
-    //     axios.patch(`http://localhost:8080/cart/${item.id}`, item).then(() => {
+    //     axios.patch(`http://localhost:8000/cart/${item.id}`, item).then(() => {
     //       toast({
     //         title: "Product add to cart!",
     //         status: "success",
@@ -54,6 +56,34 @@ import {
     //   onClose();
     // };
     
+
+    const handleAddtoCart = () => {
+      const {user_id,_id}=productData
+      const payload={
+        user_id:user_id,
+        product_id:_id,
+        quantity:qty
+      }
+      
+      axios.post("http://localhost:8000/cart/addtocart",payload)
+      .then((res)=>{
+        toast({
+                  title: "Product add to cart!",
+                  status: "success",
+                  isClosable: true,
+                });
+      })
+      .catch((err)=>{
+        console.log(err)
+      })
+
+      onClose();
+    }
+
+    useEffect(() => {
+      
+    },[])
+
     return (
       <>
         <button
@@ -134,12 +164,13 @@ import {
                     </Box>
                   </Flex>
                   <Button
-                    // onClick={() => handleAddtoCart(productData)}
+                    onClick={() => handleAddtoCart(productData)}
                     margin="5px 0px"
                     bgColor="#12284C"
                     color="white"
                     width="100%"
                     _hover={{ backgroundColor: "#12281C" }}
+            
                   >
                     <BsFillBagPlusFill />
                     &#xFEFF;&#xFEFF; Add To Bag

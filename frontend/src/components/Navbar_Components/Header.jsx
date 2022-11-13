@@ -1,8 +1,10 @@
 import React from 'react'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
-
+import { faA, faBell,faCartShopping,faDashboard,faFlag, faHeader, faMailBulk, faSearch } from '@fortawesome/free-solid-svg-icons'
+import { faUser } from '@fortawesome/free-regular-svg-icons'
+import { Link } from 'react-router-dom'
+import Signup from '../../UMS/Signup'
 
 const Header = () => {
   return (
@@ -10,13 +12,14 @@ const Header = () => {
       <div className='navbar'>
       
       <div className='before-menu'>
-        {/* <h1>MODESENS</h1> */}
-        <img src="https://cdn.modesens.com/static/img/20190228newlogo-black.svg" alt="" />
+        <Link to="/"> <img src="https://cdn.modesens.com/static/img/20190228newlogo-black.svg" alt="" /></Link>
+       
       </div>
 
       <div className='menu-bar'>
-        <div className='women'>WOMEN
-  
+        <div className='women'>
+        <Link to="/womens">WOMEN</Link>
+
          <div className='sub-menu-1'>
        
            <div>SHOPALL</div>
@@ -30,7 +33,9 @@ const Header = () => {
 
          </div>
         </div>
- <div className='men'>MEN
+ <div className='men'>
+ <Link to="/mens">MEN</Link>
+ 
     <div className='sub-menu-1'>
        
        <div>SHOPALL</div>
@@ -44,7 +49,8 @@ const Header = () => {
 
     </div>
  </div>
-   <div className='beauty'>BEAUTY
+   <div className='beauty'>
+   <Link to="/beauty">BEAUTY</Link>
     <div className='sub-menu-1'>
        
        <div>SHOPALL</div>
@@ -58,7 +64,8 @@ const Header = () => {
 
     </div>     
   </div>
-    <div className='kids'>KIDS
+    <div className='kids'>
+    <Link to="https://modesens.com/designers/">KIDS</Link>
      <div className='sub-menu-1'>
        
        <div>SHOPALL</div>
@@ -75,7 +82,8 @@ const Header = () => {
 
     </div>       
   </div>
-        <div className='kids'>HOME
+        <div className='kids'>
+        <Link to="https://modesens.com/designers/">HOME</Link>
            <div className='sub-menu-5'>
            <div className='sub-menu-5-sub'>
               <div>
@@ -95,7 +103,7 @@ const Header = () => {
                 <div>SALE</div>
               </div>
               <div>
-                 <heading className="menu_heading">Designers</heading>
+                <Link to="/design"><p className="menu_heading">Designers</p></Link>
                  <div>GUCCI</div>
                  <div>VERSACE</div>
                  <div>MASION MARGIELA</div>
@@ -189,11 +197,15 @@ const Header = () => {
         </div>
       </div>
       <div className='after-menu'>
-        3
-        <p><FontAwesomeIcon icon="fa-solid fa-bell" /></p>
-        <FontAwesomeIcon icon="check-square" />
-      Your <FontAwesomeIcon icon="coffee" /> is hot and ready!
-       {/* <img src={"../Icons/shopping-bag.jpg"} alt="" />   */}
+        <p><FontAwesomeIcon icon={faFlag}/></p>
+        <p><FontAwesomeIcon icon={faBell}/></p>
+        <Link to="./signup">{<Signup/>}</Link>
+  
+        <Link to="./search"><p><FontAwesomeIcon icon={faSearch}/></p></Link>
+        <Link to="./cart"><p><FontAwesomeIcon icon={faCartShopping}/></p></Link>
+        <Link to="./admin"><p><FontAwesomeIcon icon={faA}/></p></Link>
+        
+  
       </div>
 
    </div>

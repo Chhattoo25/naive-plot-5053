@@ -1,4 +1,6 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser } from '@fortawesome/free-regular-svg-icons'
 import {
     Modal,
     ModalOverlay,
@@ -43,10 +45,9 @@ const Signup = () => {
   }
 
   const register =async(e)=>{
+    console.log(e)
     e.preventDefault()
-    // await adduserurl(user)
-    // navigate('/login')
-    //console.log(user)
+   
     if(user){
       axios.post('http://localhost:8000/user/signup',user)
       .then(res =>alert(res.data.msg))
@@ -55,6 +56,7 @@ const Signup = () => {
     else{
       alert("Invalid Input")
     }
+    navigate('/login')
   }
 
   const submitgoogle = async()=>{
@@ -66,7 +68,7 @@ const Signup = () => {
   const finalRef = React.useRef(null)
   return (
     <div>
-      <Button onClick={onOpen}>SignUP</Button>
+      <Button mt="-10px" colorScheme='teal' variant='ghost' onClick={onOpen}><FontAwesomeIcon icon={faUser}/></Button>
 
       <Modal 
         initialFocusRef={initialRef}
