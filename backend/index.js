@@ -20,7 +20,7 @@ app.use("/user",userRouter);
 const { productsRouter } = require("./routes/products.route")
 
 const { UserModel } = require('./models/User.model')
-// app.use("/product",productsRouter);
+
 app.use(authRoutes);
 
 const { serachRoute } = require('./routes/search')
