@@ -72,7 +72,7 @@ import {
             <ModalBody>
               <Flex>
                 <Box width="500px" h='400px'>
-                  <Image width="400px" h='400px' src={productData.image_url} />
+                  <Image width="400px" h='400px' src={productData.image1} />
                 </Box>
                 <Box>
                   <Heading as="h4" size="md">
