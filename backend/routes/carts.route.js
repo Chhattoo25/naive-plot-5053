@@ -32,6 +32,17 @@ cartsRouter.post("/addtocart", async(req,res)=>{
     res.send({"new_product":new_product})
 })
 
+cartsRouter.delete("/deleteorder/:id",async(req,res)=>{
+    const {id}=req.params
+    const data=await CartModel.findOne({_id:id})
+    if(data){
+        await CartModel.deleteOne({_id:id})
+        res.send({"msg":"product is deleted","data":data})
+    }
+    else{
+        res.send({"msg":"product not exist more"})   
+    }
 
+})
 
 module.exports={cartsRouter}
