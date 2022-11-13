@@ -1,8 +1,44 @@
 import { Box, Button, Flex, Spacer, Text } from "@chakra-ui/react";
 import React from "react";
 import { Grid, GridItem } from "@chakra-ui/react";
+import axios from "axios";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+
 
 const Cart = () => {
+  const navigate = useNavigate();
+  const [data, setData] = useState([])
+  const getData = () => {
+    return axios.get("http://localhost:8080/cart").then((r) => {
+      setData(r.data.data)
+    })
+  };
+
+  useEffect(() => {
+    getData();
+  },[data.length]);
+
+  if(data.length === 0){
+    return (
+      <div style={{textAlign: "center"}}>
+        <Text margin="200px" textAlign="center" marginBottom="30px">
+          Your Bag is Empty
+        </Text>
+        <Button
+          margin="auto"
+          alignItems="center"
+          colorScheme="facebook"
+          marginBottom="30px"
+          onClick={() => navigate("/brandProducts")}
+        >
+          ADD SOMETHING
+        </Button>
+      </div>
+    )
+  }
+  
   return (
     <div>
       <Box w="100%" alignItems="center" border="2px solid red">
