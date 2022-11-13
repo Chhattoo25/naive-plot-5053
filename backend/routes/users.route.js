@@ -40,7 +40,6 @@ userRouter.post("/signup", async (req, res) => {
             password : hash,
             // type
         })
-        
         // const token = await UserModel.generateAuthToken();
 
         const token = await registerEmployee.generateAuthToken();
