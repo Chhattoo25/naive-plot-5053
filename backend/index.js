@@ -9,17 +9,27 @@ app.use(express.json())
 require('./config/google-outh');
 
 
+const authRoutes = require('./routes/google.route')
+
+
+
 
 const {userRouter}=require("./routes/users.route")
-app.use("/user",userRouter)
+app.use("/user",userRouter);
 
 const { productsRouter } = require("./routes/products.route")
+
+const { UserModel } = require('./models/User.model')
+// app.use("/product",productsRouter);
+app.use(authRoutes);
+
 const { serachRoute } = require('./routes/search')
 app.use("/product",productsRouter)
 app.use("/api",serachRoute)
 
+
 app.get('/',(req,res)=>{
-    res.send("Homepage2")
+    res.send("Modsens_Homepage2")
 })
 
 app.get('/auth/google',
@@ -32,6 +42,9 @@ app.get('/auth/google/callback',
     console.log(req.user)
     res.redirect('/');
   });
+
+
+  
 
 app.listen(8000,async()=>{
     try{

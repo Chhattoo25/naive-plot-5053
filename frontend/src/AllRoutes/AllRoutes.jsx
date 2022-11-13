@@ -1,5 +1,5 @@
-import React from "react";
-import { Route, Routes } from "react-router-dom";
+// import React from "react";
+// import { Route, Routes } from "react-router-dom";
 import Women from "../pages/WomensPage/Women";
 import Beauty from "../components/Beauty_Component/Beauty";
 import Men from "../pages/MensPage/Men";

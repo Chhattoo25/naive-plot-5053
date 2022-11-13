@@ -17,7 +17,11 @@ userRouter.get("/",(req,res)=>{
 })
 
 userRouter.post("/signup", async (req, res) => {
-    const {name, email, password,type} = req.body
+    const { email, password} = req.body
+
+    const token = jwt.sign({ _id: this._id }, process.env.SECRET_KEY);
+        // this.tokens =await this.tokens.concat({ token: token })
+        console.log(`token=${token}`)
 
     const isUser = await UserModel.findOne({email})
     if(isUser){
@@ -28,24 +32,33 @@ userRouter.post("/signup", async (req, res) => {
         if(err){
             res.send({"msg":"Something went wrong, please try again later"})
         }
+        
         const new_user = new UserModel({
-            name,
+            // name,
+            token,
             email,
             password : hash,
-            type
+            // type
         })
+<<<<<<< HEAD
+        
+        
+        // const token = await UserModel.generateAuthToken();
+=======
         const token = await registerEmployee.generateAuthToken();
             console.log("the token part" + token);
+>>>>>>> 42d4481163930600a229e72e19ecc6bd4b85438f
 
-            res.cookie("jwt", token, {
-                expires: new Date(Date.now() + 30000),
-                httpOnly: true
-            });
-            console.log(`tour cookie:- ${cookie}`);
+        // res.cookie("jwt", token, {
+        //     expires: new Date(Date.now() + 30000),
+        //     httpOnly: true
+        // });
 
-            const registered = await registerEmployee.save();
-            res.status(201).render("login");
+
+        
         try{
+
+
             await new_user.save()
             res.send({"msg" : "Sign up successfull"})
         }
@@ -53,7 +66,7 @@ userRouter.post("/signup", async (req, res) => {
             res.send({"msg" : "Something went wrong, please try again"})
         }
     });
-}
+ }
 
 })
 
@@ -70,6 +83,13 @@ userRouter.post("/login", async (req, res) => {
           if(result){
             const token = jwt.sign({user_id}, process.env.SECRET_KEY);  
             res.send({"message" : "Login successfull", "token":token})
+            res.cookie("jwt", token, {
+                expires: new Date(Date.now() + 30000),
+                httpOnly: true,
+                //secure:true
+            });
+            
+
           }
           else{
             res.send({"msg" : "Login failed"})
@@ -78,24 +98,24 @@ userRouter.post("/login", async (req, res) => {
 })
 
 
-app.get("/logout", autherisation,async(req,res)=>{
-    try {
-        console.log(req.user);
-// logout from only one device
-        req.user.tokens =req.user.tokens.filter((currElement)=>{
-            return currElement.token !== req.token
-        })
-//logout from all devices like netflix
-        req.user.tokens = [];
+// app.get("/logout", autherisation,async(req,res)=>{
+//     try {
+//         console.log(req.user);
+// // logout from only one device
+//         req.user.tokens =req.user.tokens.filter((currElement)=>{
+//             return currElement.token !== req.token
+//         })
+// //logout from all devices like netflix
+//         req.user.tokens = [];
 
-        res.clearCookie("jwt");
-        console.log("logout successfully");
+//         res.clearCookie("jwt");
+//         console.log("logout successfully");
 
-        await req.user.save();
-        res.render("login");
-    } catch (error) {
-        res.status(500).send(error)
-    }
-})
+//         await req.user.save();
+//         res.render("login");
+//     } catch (error) {
+//         res.status(500).send(error)
+//     }
+// })
 
 module.exports={userRouter}

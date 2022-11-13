@@ -1,6 +1,5 @@
 import AllRoutes from "./AllRoutes/AllRoutes";
-import Header from "./Header";
-import Footer from "./Footer";
+import Header from './Header';
 function App() {
   return (
     <div className="App">
@@ -10,5 +9,8 @@ function App() {
     </div>
   );
 }
+
+
+
 
 export default App;
