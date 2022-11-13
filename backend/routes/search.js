@@ -29,7 +29,7 @@ const limit = parseInt(req.query.limit)||5
 
     // const data = await ProductModel.find({name:{$regex:search,$options:"i"}}).sort(sortBy).skip(page*limit).limit(limit)
     const data=await ProductModel.find({name:{$regex:name,$options:"i"}}).sort({price:Number(sort)})
-    res.send({data})
+    // res.send({data})
 // const total = await ProductModel.countDocuments({
 // type:{$in:[...type]},
 // name:{$regex:search,$options:"i"}
