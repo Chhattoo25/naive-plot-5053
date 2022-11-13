@@ -8,7 +8,6 @@ const { autherisation } = require("../middlewares/autherisation");
 const { UserModel } = require("../models/User.model");
 const { type } = require("os");
 
-
 productsRouter.get("/",authentication,autherisation,async(req,res)=>{
     const {user_id}=req.body
     const {user_type}=await UserModel.findOne({_id:user_id})
@@ -43,6 +42,18 @@ productsRouter.get("/search",async(req,res)=>{
            const data=await ProductModel.find({name:{$regex:name,$options:"i"}}).sort({price:Number(sort)})
            res.send({data})
 })
+
+productsRouter.get("/",async(req,res)=>{
+    const data=await ProductModel.find()
+    console.log(data);
+    res.send({data:data})
+})
+
+// productsRouter.get("/:user_id",async(req,res)=>{
+//     const {user_id}=req.params
+//     const data=await ProductModel.findOne({user_id:user_id})
+//     res.send({data:data})
+// })
 
 productsRouter.post("/addproduct",authentication,autherisation,async(req,res)=>{
     const {title,gender,name,sub_type,category,colour,price,quantity,brand,discription,image1,image2,image3,user_id}=req.body

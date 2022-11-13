@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import SearchDiv from "./SearchDiv";
 const base_url = process.env.REACT_APP_API_URL;
 const Search = () => {
   const [obj, setObj] = useState({});
@@ -11,9 +12,10 @@ const Search = () => {
   useEffect(() => {
     const getAllProduct = async () => {
       try {
-        const url = `${base_url}?page=${page}&sort=${sort.sort},$${
-          sort.order
-        }&type=${filter.toString()}&search=${search}`;
+        // const url = `${base_url}?page=${page}&sort=${sort.sort},$${
+        //   sort.order
+        // }&type=${filter.toString()}&search=${search}`;
+        const url = `${base_url}`
         const { data } = await axios.get(url);
         console.log(data);
       } catch (err) {
@@ -22,7 +24,9 @@ const Search = () => {
     };
     getAllProduct();
   }, [sort, filter, page, search]);
-  return <div>Search</div>;
+  return <div>
+    <SearchDiv setSearch={(search)=>setSearch(search)} />
+  </div>;
 };
 
 export default Search;

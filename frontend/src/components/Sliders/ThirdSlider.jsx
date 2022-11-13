@@ -4,6 +4,7 @@ import Styles from './slider.module.css'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 
 
@@ -56,6 +57,8 @@ const ThirdSlider = () => {
   };
   return (
     <>
+    <Link to={"/womens/product"}>
+
       <Slider {...settings}>
         <div className={Styles.slide_3}>
           <div>
@@ -133,6 +136,8 @@ const ThirdSlider = () => {
           </div>
         </div>
       </Slider>
+    </Link>
+
     </>
   );
 };
