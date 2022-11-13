@@ -1,14 +1,18 @@
 
 import React from 'react'
-import Slider1 from './Slider1'
-import Slider2 from './Slider2'
-import Slider3 from './slider3'
-import Slider4 from './Slider4'
-import Slider5 from './Slider5'
+import Footer from '../../components/Navbar_Components/Footer'
+import Header from '../../components/Navbar_Components/Header'
+import Slider1 from '../../components/Landing_Pages_Sliders/Slider1'
+import Slider2 from '../../components/Landing_Pages_Sliders/Slider2'
+import Slider3 from '../../components/Landing_Pages_Sliders/slider3'
+import Slider4 from '../../components/Landing_Pages_Sliders/Slider4'
+import Slider5 from '../../components/Landing_Pages_Sliders/Slider5'
+import Bottom from '../../components/Sliders/Bottom'
 
 const Body = () => {
   return (
     <div>
+      <Header/>
       <Slider1/>
       <div className='in_body_div1'>
           <heading>Featured Brands</heading>
@@ -29,7 +33,10 @@ const Body = () => {
       <div className='in_body_div1'>
         <heading>COMMUNITY POSTS</heading>
       </div>
+
       <Slider3/>
+      <Bottom/>
+      <Footer/>
    
   
   

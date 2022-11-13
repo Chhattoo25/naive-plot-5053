@@ -165,6 +165,14 @@ border-top: 1px gray solid;
   font-weight:400;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+.footer_p{
+ font-style: normal;
+ font-weight: 400;
+ font-size: 14px;
+ line-height:21px;
+ color:#8e8e8e;
+ text-align: center;
+}
 .footer_customer>input{
   width:300px;
   margin: auto;
@@ -199,8 +207,9 @@ border-top: 1px gray solid;
   background-color: #fff;
   font-size: 16px;
   font-weight: 100;
-  padding: 10px;
+  /* padding: 10px; */
   /* margin-bottom: 10px; */
+  text-align: center;
 }
 .landing_button{
   width:125px;
