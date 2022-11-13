@@ -5,6 +5,7 @@ import 'slick-carousel/slick/slick-theme.css';
 
 // import './App.css';
 import { dataDigitalBestSeller1 } from '../../pages/Navbar/data';
+import { Link } from 'react-router-dom';
 
 function Slider2() {
   
@@ -36,7 +37,8 @@ function Slider2() {
             </div>
             <div className="card-bottom1">
               <h3>{item.description}</h3>
-               <button>SHOP NOW</button>
+              <button><Link to="/womens/product">SHOP NOW</Link></button>
+              
             </div>
           </div>
         ))}

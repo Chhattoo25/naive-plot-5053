@@ -8,11 +8,12 @@ import Slider3 from '../../components/Landing_Pages_Sliders/slider3'
 import Slider4 from '../../components/Landing_Pages_Sliders/Slider4'
 import Slider5 from '../../components/Landing_Pages_Sliders/Slider5'
 import Bottom from '../../components/Sliders/Bottom'
+import { Link } from 'react-router-dom'
 
 const Body = () => {
   return (
     <div>
-      <Header/>
+      {/* <Header/> */}
       <Slider1/>
       <div className='in_body_div1'>
           <heading>Featured Brands</heading>
@@ -29,14 +30,14 @@ const Body = () => {
         <heading>TRENDING NOW</heading>
       </div>
       <Slider5/>
-      <button className='landing_button'>SHOP MORE</button>
+      <button className='landing_button'><Link to="/mens/product">SHOW MORE</Link></button>
       <div className='in_body_div1'>
         <heading>COMMUNITY POSTS</heading>
       </div>
 
       <Slider3/>
       <Bottom/>
-      <Footer/>
+      {/* <Footer/> */}
    
   
   
