@@ -18,30 +18,32 @@ const {userRouter}=require("./routes/users.route")
 app.use("/user",userRouter);
 
 const { productsRouter } = require("./routes/products.route")
-
-const { UserModel } = require('./models/User.model')
-// app.use("/product",productsRouter);
-app.use(authRoutes);
-
-const { serachRoute } = require('./routes/search')
 app.use("/product",productsRouter)
-app.use("/api",serachRoute)
+
+const { cartsRouter } = require("./routes/carts.route.js")
+app.use("/cart",cartsRouter)
+
+// const { UserModel } = require('./models/User.model')
+// app.use(authRoutes);
+
+// const { serachRoute } = require('./routes/search')
+// app.use("/api",serachRoute)
 
 
-app.get('/',(req,res)=>{
-    res.send("Modsens_Homepage2")
-})
+// app.get('/',(req,res)=>{
+//     res.send("Modsens_Homepage2")
+// })
 
-app.get('/auth/google',
-  passport.authenticate('google', { scope: ['profile','email'] }));
+// app.get('/auth/google',
+//   passport.authenticate('google', { scope: ['profile','email'] }));
  
-app.get('/auth/google/callback', 
-  passport.authenticate('google', { failureRedirect: '/login', session:false }),
-  function(req, res) {
-    // Successful authentication, redirect home.
-    console.log(req.user)
-    res.redirect('/');
-  });
+// app.get('/auth/google/callback', 
+//   passport.authenticate('google', { failureRedirect: '/login', session:false }),
+//   function(req, res) {
+//     // Successful authentication, redirect home.
+//     console.log(req.user)
+//     res.redirect('/');
+//   });
 
 
   
