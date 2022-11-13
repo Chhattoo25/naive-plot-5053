@@ -17,7 +17,7 @@ productsRouter.get("/",authentication,autherisation,async(req,res)=>{
         res.send({data})
     }
     else if(user_type==="admin"){
-        const data=await ProductModel.find({name:{$regex:name,$options:"i"}}).sort({price:Number(sort)})
+        const data=await ProductModel.find()
         res.send({data})
     }
     else{
@@ -25,8 +25,8 @@ productsRouter.get("/",authentication,autherisation,async(req,res)=>{
     }
 })
 productsRouter.get("/filter",async(req,res)=>{
-    const {type,sub_type,category,sort}=req.query
-    const data=await ProductModel.find({$or:[{type:type},{sub_type:sub_type},{category:category}]}).sort({price:Number(sort)})
+    const {gender,sub_type,category,sort}=req.query
+    const data=await ProductModel.find({$or:[{gender:gender},{sub_type:sub_type},{category:category}]}).sort({price:Number(sort)})
     res.send({data})
   
 })
@@ -45,10 +45,10 @@ productsRouter.get("/search",async(req,res)=>{
 })
 
 productsRouter.post("/addproduct",authentication,autherisation,async(req,res)=>{
-    const {title,type,name,sub_type,category,colour,price,quantity,brand,discription,image1,image2,image3,user_id}=req.body
+    const {title,gender,name,sub_type,category,colour,price,quantity,brand,discription,image1,image2,image3,user_id}=req.body
     const new_product = new ProductModel({
         title,
-        type,
+        gender,
         name,
         sub_type,
         category,
