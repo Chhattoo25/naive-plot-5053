@@ -43,6 +43,8 @@
 .after-menu{
   width: 25%;
   /* background-color: aliceblue; */
+  display: flex;
+  gap: 25px;
   padding:1rem 0
 }
 .menu-bar{
@@ -163,6 +165,14 @@ border-top: 1px gray solid;
   font-weight:400;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+.footer_p{
+ font-style: normal;
+ font-weight: 400;
+ font-size: 14px;
+ line-height:21px;
+ color:#8e8e8e;
+ text-align: center;
+}
 .footer_customer>input{
   width:300px;
   margin: auto;
@@ -189,13 +199,49 @@ border-top: 1px gray solid;
   top: 40%;
 }
 
+.card-bottom1>button{
+  width:125px;
+  margin-top: 20px;
+  height: 35px;
+  border:1px gray solid;
+  background-color: #fff;
+  font-size: 16px;
+  font-weight: 100;
+  /* padding: 10px; */
+  /* margin-bottom: 10px; */
+  text-align: center;
+}
+.landing_button{
+  width:125px;
+  margin: 30px 0;
+  height: 35px;
+  font-weight: 500;
+  margin-left: 46%;
+  border:1px gray solid;
+  background-color: #fff;
+  font-size: 16px;
+  font-weight: 100;
+  /* padding: 10px; */
+  text-align: center;
+}
+.landing_button:hover{
+  background-color:black;
+  color: #fff;
+}
+
+.card-bottom1>button:hover{
+  background-color: black;
+  color:#fff
+}
+
 /* website body part */
 .in_body_div1{
-  width: 70%;
+  width: 100%;
   margin: auto;
-  /* background-color:violet;/ */
-  margin-top: 20px;
-  padding: 5px;
+  border-bottom: 1px gray solid;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 25px;
   text-align: center;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -280,10 +326,9 @@ border-top: 1px gray solid;
 }
 .card1{
   border: 1px solid #fff;
- 
   border-radius: 3px;
   overflow: hidden;
-  height: 600px;
+  height: 630px;
   color: #fff;
   cursor: pointer;
 }
@@ -294,6 +339,8 @@ border-top: 1px gray solid;
   height: 330px;
   color: #fff;
   cursor: pointer;
+  margin: 10px 0;
+  margin-bottom: 20px;
 }
 .card5{
   border: 1px solid gray;
@@ -330,6 +377,40 @@ border-top: 1px gray solid;
   margin-top: 20px;
   background: black;
 }
+.slider_titles>h4{
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  color: #1c1c1c;
+  padding: 10px ;
+}
+.slider_titles>p{
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: #8e8e8e;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  .slider_titles>h2{
+    font-style: normal;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 5px;
+    color: #c00000;
+   
+  }
+  .slider_titles span{
+    color: #1c1c1c;
+  }
+  .slider_titles>footer{
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #767575;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 .card-top2 > img {
   width: 85%;
   height: 300px;

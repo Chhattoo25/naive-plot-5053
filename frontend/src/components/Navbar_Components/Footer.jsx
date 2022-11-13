@@ -61,6 +61,11 @@ const Footer = () => {
          </div>
                 
         </div>
+        <br /><br />
+          <p className='footer_p'>When you follow our links to visit a brand or retailer’s website or make a purchase, ModeSens may earn a commission.</p>
+          <br />
+        <hr />
+        <br /><br /><br />
     </div>
   )
 }

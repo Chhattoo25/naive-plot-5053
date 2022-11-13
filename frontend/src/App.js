@@ -1,6 +1,6 @@
 
 import AllRoutes from "./AllRoutes/AllRoutes";
-import Header from './Header';
+// import Header from './Header';
 import './App.css';
 function App() {
   return (
@@ -8,6 +8,7 @@ function App() {
     {/* <Header/> */}
       <AllRoutes />
       {/* <Footer/> */}
+
     </div>
   );
 }
