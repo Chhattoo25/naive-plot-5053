@@ -16,10 +16,22 @@ const Body = () => {
 
           {/* <heading>Special Offers</heading> */}
       </div>
-      <Slider2/>
-      <Slider3/>
       <Slider4/>
-  <Slider5/>
+      <div className='in_body_div1'>
+        <heading>SPECIAL OFFERS</heading>
+      </div>
+      <Slider2/>
+      <div className='in_body_div1'>
+        <heading>TRENDING NOW</heading>
+      </div>
+      <Slider5/>
+      <button className='landing_button'>SHOP MORE</button>
+      <div className='in_body_div1'>
+        <heading>COMMUNITY POSTS</heading>
+      </div>
+      <Slider3/>
+   
+  
   
     </div>
   )

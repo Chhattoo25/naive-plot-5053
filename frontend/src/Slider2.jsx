@@ -36,7 +36,7 @@ function Slider2() {
             </div>
             <div className="card-bottom1">
               <h3>{item.description}</h3>
-              {/* <span className="category">{item.category}</span> */}
+               <button>SHOP NOW</button>
             </div>
           </div>
         ))}

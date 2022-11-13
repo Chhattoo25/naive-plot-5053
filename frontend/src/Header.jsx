@@ -1,6 +1,10 @@
 import React from 'react'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBell, faEnvelope, faFlag, faSearch } from '@fortawesome/free-solid-svg-icons'
+import { faUser } from '@fortawesome/free-regular-svg-icons'
+
 
 
 
@@ -189,11 +193,12 @@ const Header = () => {
         </div>
       </div>
       <div className='after-menu'>
-        3
-        <p><FontAwesomeIcon icon="fa-solid fa-bell" /></p>
-        <FontAwesomeIcon icon="check-square" />
-      Your <FontAwesomeIcon icon="coffee" /> is hot and ready!
-       {/* <img src={"../Icons/shopping-bag.jpg"} alt="" />   */}
+        <p><FontAwesomeIcon icon={faFlag}/></p>
+        {/* <p><FontAwesomeIcon icon={faEnvelope} /></p> */}
+        <p><FontAwesomeIcon icon={faBell}/></p>
+        <p><FontAwesomeIcon icon={faUser}/></p>
+        <p><FontAwesomeIcon icon={faSearch}/> <span>SEARCH</span> </p>
+  
       </div>
 
    </div>

@@ -32,10 +32,10 @@ function Slider5() {
                 src={item.linkImg}
                 alt={item.title}/>
             </div>
-            <div>
+            <div className='slider_titles'>
                 <h4>{item.title}</h4>
                 <p>{item.description}</p>
-                <h2>{`${item.discount_price}-${item.price}`}</h2>
+                <h2>{item.discount_price}<span>-{item.price}</span></h2>
                 <footer>{item.compare}</footer>
             </div>
           </div>
