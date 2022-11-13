@@ -57,11 +57,6 @@ import { useEffect } from "react";
     // };
     
 
-    // const handleAddtoCart = (productData) => {
-    //   const product = localStorage.setItem("cart", JSON.stringify(productData))
-    //   console.log(product)
-    // }
-
     const handleAddtoCart = () => {
       const {user_id,_id}=productData
       const payload={
@@ -69,15 +64,20 @@ import { useEffect } from "react";
         product_id:_id,
         quantity:qty
       }
-      console.log(payload)
+      
       axios.post("http://localhost:8000/cart/addtocart",payload)
       .then((res)=>{
-        console.log(res)
+        toast({
+                  title: "Product add to cart!",
+                  status: "success",
+                  isClosable: true,
+                });
       })
       .catch((err)=>{
         console.log(err)
       })
 
+      onClose();
     }
 
     useEffect(() => {

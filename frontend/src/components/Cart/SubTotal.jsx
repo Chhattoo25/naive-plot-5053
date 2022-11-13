@@ -1,9 +1,9 @@
-import React from 'react'
+const Subtotal = ({ product }) => {
+  let sum = 0;
+  product.forEach((item) => {
+    sum += +item.price.slice(1) * item.qty;
+  });
 
-const SubTotal = () => {
-  return (
-    <div>SubTotal</div>
-  )
-}
-
-export default SubTotal
+  return sum;
+};
+export { Subtotal };
