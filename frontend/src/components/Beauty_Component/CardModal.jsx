@@ -23,7 +23,6 @@ import {
   import { ChevronDownIcon } from "@chakra-ui/icons";
   import { RiDislikeLine } from "react-icons/ri";
   import { BsFillBagPlusFill } from "react-icons/bs";
-  import axios from "axios";
   import  "./Beauty.css";
 
 

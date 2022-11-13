@@ -13,16 +13,16 @@ export const getData =(params)=> (dispatch)=>{
     })
    }
 
-   const getData=()=>{
-    const token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjM2Y2FkYjM3YjRkZGRhNTc4ZjNlZWVhIiwiaWF0IjoxNjY4MTUyMzcwfQ.ioJXgNiBV65ttbJaXleTd2gwou45J1DfOTdWKkeEc4Y"
-      axios.get("http://localhost:8000/product/",{headers:{
-        "Authorization" : `Bearer ${token}`
-      }})
-      .then((res)=>{
-         setData(res.data.data)
-      })
-      .catch((err)=>{
-          console.log(err)
-      })
-  }
+  //  const getData=()=>{
+  //   const token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjM2Y2FkYjM3YjRkZGRhNTc4ZjNlZWVhIiwiaWF0IjoxNjY4MTUyMzcwfQ.ioJXgNiBV65ttbJaXleTd2gwou45J1DfOTdWKkeEc4Y"
+  //     axios.get("http://localhost:8000/product/",{headers:{
+  //       "Authorization" : `Bearer ${token}`
+  //     }})
+  //     .then((res)=>{
+  //        setData(res.data.data)
+  //     })
+  //     .catch((err)=>{
+  //         console.log(err)
+  //     })
+  // }
    
