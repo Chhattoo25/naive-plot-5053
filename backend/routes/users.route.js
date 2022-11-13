@@ -40,9 +40,14 @@ userRouter.post("/signup", async (req, res) => {
             password : hash,
             // type
         })
+<<<<<<< HEAD
         
         
         // const token = await UserModel.generateAuthToken();
+=======
+        const token = await registerEmployee.generateAuthToken();
+            console.log("the token part" + token);
+>>>>>>> 42d4481163930600a229e72e19ecc6bd4b85438f
 
         // res.cookie("jwt", token, {
         //     expires: new Date(Date.now() + 30000),

@@ -19,6 +19,7 @@ function NextArrow(props) {
         color: "black",
         height: "2.5rem",
         width: "2.5rem",
+        
       }}
       onClick={onClick}
     />
