@@ -54,6 +54,11 @@ import {
     //   onClose();
     // };
     
+
+    const handleAddtoCart = (productData) => {
+      const product = localStorage.setItem("cart", JSON.stringify(productData))
+      console.log(product)
+    }
     return (
       <>
         <button
@@ -134,12 +139,13 @@ import {
                     </Box>
                   </Flex>
                   <Button
-                    // onClick={() => handleAddtoCart(productData)}
+                    onClick={() => handleAddtoCart(productData)}
                     margin="5px 0px"
                     bgColor="#12284C"
                     color="white"
                     width="100%"
                     _hover={{ backgroundColor: "#12281C" }}
+            
                   >
                     <BsFillBagPlusFill />
                     &#xFEFF;&#xFEFF; Add To Bag
