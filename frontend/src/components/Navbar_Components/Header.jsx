@@ -202,7 +202,7 @@ const Header = () => {
         <p><FontAwesomeIcon icon={faUser}/></p>
         <p><FontAwesomeIcon icon={faSearch}/> <span>SEARCH</span> </p>
         <Link to="./cart"><p><FontAwesomeIcon icon={faCartShopping}/></p></Link>
-        <Link to="./cart"><p><FontAwesomeIcon icon={faA}/></p></Link>
+        <Link to="./admin"><p><FontAwesomeIcon icon={faA}/></p></Link>
         
   
       </div>
