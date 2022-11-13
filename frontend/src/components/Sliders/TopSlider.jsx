@@ -22,7 +22,9 @@ function NextArrow(props) {
         display: "block",
         color: "black",
         height: "2.5rem",
-        width: "2.0rem",
+        width: "3.0rem",
+        padding:"0rem 0rem 0rem 1.5rem"
+
       }}
       onClick={onClick}
     />
@@ -40,7 +42,9 @@ function PrevArrow(props) {
         color: "black",
         height: "2.5rem",
         width: "2.5rem",
-        marginRight:"2rem"
+        marginRight:"2rem",
+       padding:"0rem 1rem 0rem 0rem"
+
       }}
       onClick={onClick}
     />
@@ -154,7 +158,7 @@ const BOX = styled.div`
 `;
 
 
-const Heading = styled.h1`
-color:green;
-font-size: 200px;
-`
+// const Heading = styled.h1`
+// color:green;
+// font-size: 200px;
+// `

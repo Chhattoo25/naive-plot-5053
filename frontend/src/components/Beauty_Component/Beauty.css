@@ -1,0 +1,43 @@
+
+
+.beauty_container{
+    position: relative; 
+    width: 300px;
+    height: 400px;
+}
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.5s ease;
+  }
+
+  .beauty_container:hover .overlay {
+    display: block;
+  }
+
+  .productImage{
+    width: 300px;
+    height: 300px;
+  }
+
+  .productViewButton{
+    position: absolute;
+    width: 290px;
+    left:0;
+    bottom: 130px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity .35s ease;
+    z-index: 1;
+    border: solid 2px black;
+    padding: 8px 28px;
+  }
+
+  .beauty_container:hover .productViewButton {
+    opacity: 1;
+  }

@@ -19,79 +19,73 @@ import {
     Menu,
     useToast,
   } from "@chakra-ui/react";
-  import React, { useEffect, useState } from "react";
+  import React, { useState } from "react";
   import { ChevronDownIcon } from "@chakra-ui/icons";
   import { RiDislikeLine } from "react-icons/ri";
   import { BsFillBagPlusFill } from "react-icons/bs";
   import axios from "axios";
-  const CardModal = ({ props }) => {
-    const [qty, setQty] = useState(props?.qty ? props.qty : 1);
+  import  "./Beauty.css";
+
+
+  const CardModal = ({ productData }) => {
+    const [qty, setQty] = useState(productData?.qty ? productData.qty : 1);
     const toast = useToast();
     const { onOpen, isOpen, onClose } = useDisclosure();
   
-    const handleAddtoCart = (item) => {
-      if (!item.qty) {
-        item.qty = qty;
-        axios.post(`http://localhost:8080/cart`, item).then(() => {
-          toast({
-            title: "Product add to cart!",
-            status: "success",
-            isClosable: true,
-          });
-        });
-      } else {
-        item.qty = qty;
-        axios.patch(`http://localhost:8080/cart/${item.id}`, item).then(() => {
-          toast({
-            title: "Product add to cart!",
-            status: "success",
-            isClosable: true,
-          });
-        });
-      }
-      onClose();
-    };
+    // const handleAddtoCart = (item) => {
+    //   if (!item.qty) {
+    //     item.qty = qty;
+    //     axios.post(`http://localhost:8080/cart`, item).then(() => {
+    //       toast({
+    //         title: "Product add to cart!",
+    //         status: "success",
+    //         isClosable: true,
+    //       });
+    //     });
+    //   } else {
+    //     item.qty = qty;
+    //     axios.patch(`http://localhost:8080/cart/${item.id}`, item).then(() => {
+    //       toast({
+    //         title: "Product add to cart!",
+    //         status: "success",
+    //         isClosable: true,
+    //       });
+    //     });
+    //   }
+    //   onClose();
+    // };
+    
     return (
       <>
         <button
           onClick={() => {
             return onOpen();
           }}
-          className={ "productViewButton"}
+          className='productViewButton'
         >
           Quick View
         </button>
-        <Modal onClose={onClose} size={"3xl"} isOpen={isOpen}>
+        <Modal onClose={onClose} size={"4xl"} isOpen={isOpen}>
           <ModalOverlay />
           <ModalContent>
             <ModalHeader>{}</ModalHeader>
             <ModalCloseButton />
             <ModalBody>
               <Flex>
-                <Box width="1300px">
-                  <Image width="400px" src={props.Image} />
+                <Box width="500px" h='400px'>
+                  <Image width="400px" h='400px' src={productData.image_url} />
                 </Box>
                 <Box>
                   <Heading as="h4" size="md">
-                    {props.ProductCard__Title}
+                    {productData.brand}
                   </Heading>
-                  <Text>{props.ProductCard__Brand}</Text>
-                  {/* <ReactStarRating
-                    padding="0px 10px"
-                    numberOfStar={5}
-                    numberOfSelectedStar={3.6}
-                    colorFilledStar="#5E769B"
-                    colorEmptyStar="gray"
-                    border="1px solid black"
-                    starSize="20px"
-                    spaceBetweenStar="2px"
-                    disableOnSelect={false}
-                  /> */}
-                  <Text>BEST SELLER CONSCIOUS BEAUTY</Text>
-                  <Text padding="10px 3px">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Pariatur rerum placeat modi molestiae numquam tempore
-                    doloremque doloribus aliquam suscipit voluptates.
+                  <Text>{productData.title}</Text>
+                  <Text fontWeight='semibold' >${productData.price}</Text>
+                  <Text fontWeight='semibold'  padding="10px 3px">
+                   Shop From 5 Stores
+                  </Text>
+                  <Text fontWeight='semibold'  padding="10px 3px">
+                  Join now to earn up to 345 points when you buy
                   </Text>
                   <Box>
                     <Menu>
@@ -101,7 +95,7 @@ import {
                         as={Button}
                         rightIcon={<ChevronDownIcon />}
                       >
-                        Actions
+                        Select Size
                       </MenuButton>
                       <MenuList>
                         <MenuItem width="100%"></MenuItem>
@@ -141,7 +135,7 @@ import {
                     </Box>
                   </Flex>
                   <Button
-                    onClick={() => handleAddtoCart(props)}
+                    // onClick={() => handleAddtoCart(productData)}
                     margin="5px 0px"
                     bgColor="#12284C"
                     color="white"
