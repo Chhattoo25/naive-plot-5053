@@ -237,6 +237,7 @@ const WomenData = () => {
                   </div>
                 </div>
                 <div style={{ display: "flex", justifyContent: "center" }}>
+                
                   <Button>Quick View</Button>
                   {/* <CardModal productData={e} /> */}
                 </div>

@@ -11,6 +11,7 @@ import Adminupdateproduct from "../pages/AdminPage/Adminupdateproduct";
 import Admin_home from '../pages/AdminPage/Admin_home'
 import WomenProduct from "../pages/WomensPage/WomenProduct";
 import MenProduct from "../pages/MensPage/MenProduct";
+import Design from "../pages/Design/Design";
 
 
 const AllRoutes = () => {
@@ -23,6 +24,7 @@ const AllRoutes = () => {
         <Route path="/womens/product" element={<WomenProduct />} />
         <Route path="/mens" element={<Men />} />
         <Route path="/mens/product" element={<MenProduct/>} />
+        <Route path="/design" element={<Design/>} />
         <Route path="/beauty" element={<Beauty />} />
 
         <Route path='/admin' element={<Admin_home/>}/>
