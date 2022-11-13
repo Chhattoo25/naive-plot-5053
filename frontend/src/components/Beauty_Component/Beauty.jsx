@@ -20,6 +20,7 @@ import { useEffect } from 'react';
 import { getData } from '../../redux/AppReducer/Action';
 import CardModal from './CardModal';
 import { useSearchParams } from 'react-router-dom';
+import axios from 'axios';
 
 const Beauty = () => {
     const data = useSelector((state) => state.data);
@@ -32,6 +33,29 @@ const Beauty = () => {
         // _sort: "price",
         _order: sort
     }
+
+     
+         
+
+
+//    const getData1=()=>{
+//      const token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjM2Y2FkYjM3YjRkZGRhNTc4ZjNlZWVhIiwiaWF0IjoxNjY4MTUyMzcwfQ.ioJXgNiBV65ttbJaXleTd2gwou45J1DfOTdWKkeEc4Y"
+//        axios.get("http://localhost:8000/product/filter?gender=women&category=beauty&sort=-1&sub_type=makeup",{headers:{
+//          "Authorization" : `Bearer ${token}`
+//        }})
+//        .then((res)=>{
+//           console.log(res.data.data)
+//        })
+//        .catch((err)=>{
+//            console.log(err)
+//        })
+//    }
+
+
+
+
+
+
 
     useEffect(() => {
         if(data.length === 0){
@@ -223,7 +247,7 @@ const Beauty = () => {
                             {data.length > 0 && data.map((productData) => {
                                 
                                 return <Box borderWidth={1} fontFamily='SuisseIntl' className='beauty_container'>
-                                            <Box className='imageContainer'><Image className='productImage' src={productData.image_url} alt=''/>
+                                            <Box className='imageContainer'><Image className='productImage' src={productData.image1} alt=''/>
                                             </Box>
                                             <Box className='overlay'></Box>
                                             <CardModal productData={productData} />

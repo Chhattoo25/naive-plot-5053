@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import ItemsCarousel from "react-items-carousel";
 import { trending } from "./TrendingData";
+import { Link } from "react-router-dom";
 const noOfItems = 7;
 const noOfCards = 4;
 const chevronWidth = 80;
@@ -93,6 +94,7 @@ const ShowMore = styled.a`
 `;
 
 const carouselItems = trending.map((e,index) => (
+  
   <Container className="slideDiv" key={index}>
     <HeartDIv>
       <HeartImg src="https://cdn.modesens.com/static/img/20210601heart.svg" />
@@ -200,7 +202,7 @@ export default class AutoPlayCarousel extends React.Component {
         <br />
         <br />
         <div style={{ width: "200px", margin: "auto" }}>
-          <ShowMore>Show More</ShowMore>
+         <Link to={"/womens/product"}>  <ShowMore>Show More</ShowMore></Link>
         </div>
       </Wrapper>
     );

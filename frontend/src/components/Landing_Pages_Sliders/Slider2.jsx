@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import './App.css';
-import { dataDigitalBestSeller1 } from './data';
+// import './App.css';
+import { dataDigitalBestSeller1 } from '../../pages/Navbar/data';
 
 function Slider2() {
   
@@ -36,7 +36,7 @@ function Slider2() {
             </div>
             <div className="card-bottom1">
               <h3>{item.description}</h3>
-              {/* <span className="category">{item.category}</span> */}
+               <button>SHOP NOW</button>
             </div>
           </div>
         ))}
