@@ -1,15 +1,18 @@
-
 import AllRoutes from "./AllRoutes/AllRoutes";
-// import Header from './Header';
-import './App.css';
-import Search from "./components/SearchComp/Search";
+import './App.css'
+
+import Footer from "./components/Navbar_Components/Footer";
+import Header from "./components/Navbar_Components/Header";
+
+
+
 function App() {
   return (
     <div className="App">
-    
-    <Header/>
+
+      <Header/>
       <AllRoutes />
-      {/* <Footer/> */}
+      <Footer/>
 
     </div>
   );

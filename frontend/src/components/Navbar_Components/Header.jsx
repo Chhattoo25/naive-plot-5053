@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faA, faBell,faCartShopping,faDashboard,faFlag, faHeader, faMailBulk, faSearch } from '@fortawesome/free-solid-svg-icons'
 import { faUser } from '@fortawesome/free-regular-svg-icons'
 import { Link } from 'react-router-dom'
+import Signup from '../../UMS/Signup'
 
 const Header = () => {
   return (
@@ -11,8 +12,8 @@ const Header = () => {
       <div className='navbar'>
       
       <div className='before-menu'>
-        {/* <h1>MODESENS</h1> */}
-        <img src="https://cdn.modesens.com/static/img/20190228newlogo-black.svg" alt="" />
+        <Link to="/"> <img src="https://cdn.modesens.com/static/img/20190228newlogo-black.svg" alt="" /></Link>
+       
       </div>
 
       <div className='menu-bar'>
@@ -102,8 +103,7 @@ const Header = () => {
                 <div>SALE</div>
               </div>
               <div>
-                <Link to="https://modesens.com/designers/"><heading className="menu_heading">Designers</heading></Link>
-             
+                <Link to="/design"><p className="menu_heading">Designers</p></Link>
                  <div>GUCCI</div>
                  <div>VERSACE</div>
                  <div>MASION MARGIELA</div>
@@ -199,8 +199,9 @@ const Header = () => {
       <div className='after-menu'>
         <p><FontAwesomeIcon icon={faFlag}/></p>
         <p><FontAwesomeIcon icon={faBell}/></p>
-        <p><FontAwesomeIcon icon={faUser}/></p>
-        <p><FontAwesomeIcon icon={faSearch}/> <span>SEARCH</span> </p>
+        <Link to="./signup">{<Signup/>}</Link>
+  
+        <Link to="./search"><p><FontAwesomeIcon icon={faSearch}/></p></Link>
         <Link to="./cart"><p><FontAwesomeIcon icon={faCartShopping}/></p></Link>
         <Link to="./admin"><p><FontAwesomeIcon icon={faA}/></p></Link>
         
