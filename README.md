@@ -62,4 +62,30 @@ ___
 ![image](https://user-images.githubusercontent.com/95302680/201783996-63fe85ec-84da-4aaa-89ff-5cdeb7154120.png)
 ___
 
+## 🔗 Team Members & Contributions
 
+ 1. Chhatrapal Ahirwar
+
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/Chhattoo25)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/chhatrapal-ahirwar-12b9aa217/)
+
+ 2. Aman Jha
+
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/jhaaman1)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/aman-jha-729b521a9/)
+
+ 3. Pradeep Tiwari
+
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/Pradeep2888)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/pradeep-tiwari-1802a31b7/)
+
+ 4. Anurag Singh Rajawat
+
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/anurag-asr)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/anurag-singh-rajawat/)
+
+
+ 5. Shankar Kumar
+
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/Ppreedam)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/https:/www.linkedin.com/in/shankar-kumar-5a8aa5227/)
