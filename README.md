@@ -6,3 +6,36 @@
 
 ## About Project
 - This a construct week team project and we are 5 members team, built this clone in just 5 days.
+
+## Installing and Running
+```
+git clone https://github.com/Chhattoo25/naive-plot-5053.git
+cd naive-plot-5053
+npm install
+npm start
+```
+
+## Deployment Link
+[Live Vercel Link](https://modesens-nine.vercel.app/)
+
+## Techs We Use
+- `HTML`
+- `CSS`
+- `JS`
+- `React`
+- `Redux`
+- `Express`
+- `MongoDB`
+- `Node`
+- `Styled Component`
+- `Chakra UI`
+
+## Features
+- Sign In Through email, password and google auth.
+- Admin panel
+- Cart functionality
+- Search filter sort product
+
+## Some Snip Shot Of Our Site 
+
+## HomePage
