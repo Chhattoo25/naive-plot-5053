@@ -59,6 +59,7 @@ ___
 ![image](https://user-images.githubusercontent.com/95302680/201726736-104d7a18-7ae1-4a7f-8eb7-132d19033bad.png)
 ___
 ## Admin Page
-
+![image](https://user-images.githubusercontent.com/95302680/201783996-63fe85ec-84da-4aaa-89ff-5cdeb7154120.png)
+___
 
 
