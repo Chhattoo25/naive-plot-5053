@@ -13,11 +13,15 @@ import WomenProduct from "../pages/WomensPage/WomenProduct";
 import MenProduct from "../pages/MensPage/MenProduct";
 
 import Design from "../pages/Design/Design";
+import Body from "../pages/Navbar/Body";
+
+import Design from "../pages/Design/Design";
 
 import Body from "../pages/Navbar/Body";
 import Search from "../components/SearchComp/Search";
 import Signup from "../UMS/Signup"
 import Login from "../UMS/googleLogin";
+
 
 
 
